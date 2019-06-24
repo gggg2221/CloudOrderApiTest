@@ -3,34 +3,83 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - springbootorder</title>
+  <title>Test Results Report - SignTest</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>springbootorder</h1>
+<h1>SignTest</h1>
 <p>
-  Test duration: 19.981s
+  Test duration: 99.123s
 </p>
 
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">cloud.sign.newsign.ZfbIsv</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  <span class="description" title="支付宝车主平台验签及验签反查">zfbisv</span>
+      </td>
+  <td class="duration">
+    4.849s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.Throwable</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              message : 支付宝车主验签状态：0 expected [true] but found [false] in method : .zfbisv(ZfbIsv:28)<br />
+              cloud.sign.newsign.ZfbIsv.zfbisv(ZfbIsv.java:28)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">cloud.sign.oldsign.ZfbIsvo</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  <span class="description" title="支付宝车主平台老验签">zfbisvoldsign</span>
+      </td>
+  <td class="duration">
+    3.613s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.Throwable</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              message : 支付宝车主验签状态：0 expected [true] but found [false] in method : .zfbisvoldsign(ZfbIsvo:29)<br />
+              cloud.sign.oldsign.ZfbIsvo.zfbisvoldsign(ZfbIsvo.java:29)<br />
+                </div>
+      </td>
+</tr>
+      </table>
 
 
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">cloud.order.dk.WxIsvDk</td>
+        <td colspan="3" class="group">cloud.sign.newsign.JieShun</td>
       </tr>
             
 <tr>
   <td class="method">
-                  <span class="description" title="微信代扣">wxisvdk</span>
+                  <span class="description" title="捷顺验签及验签反查">jieshun</span>
       </td>
   <td class="duration">
-    8.811s
+    4.338s
   </td>
   <td class="result">
         
@@ -41,10 +90,66 @@
 </tr>
 <tr>
   <td class="method">
-                  <span class="description" title="微信退款">wxrefund</span>
+                  <span class="description" title="未开通捷顺代扣">jsclose</span>
       </td>
   <td class="duration">
-    3.031s
+    4.872s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="捷顺验签签名失败">jssigerror</span>
+      </td>
+  <td class="duration">
+    3.202s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="缓存中检索验签失败结果">redisfail</span>
+      </td>
+  <td class="duration">
+    0.080s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="缓存中检索验签成功结果">redisscusig</span>
+      </td>
+  <td class="duration">
+    0.596s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="反查超过一天的验签记录">sigyesterday</span>
+      </td>
+  <td class="duration">
+    3.149s
   </td>
   <td class="result">
         
@@ -59,10 +164,106 @@
             
 <tr>
   <td class="method">
+                  <span class="description" title="未开通微信车主代扣">wxclose</span>
+      </td>
+  <td class="duration">
+    4.849s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
                   <span class="description" title="微信车主平台验签及验签反查">wxisv</span>
       </td>
   <td class="duration">
-    2.411s
+    3.362s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="微信车主签名失败">wxsignerror</span>
+      </td>
+  <td class="duration">
+    3.170s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">cloud.sign.newsign.ZfbIsv</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  <span class="description" title="未开通支付宝车主代扣">zfbclose</span>
+      </td>
+  <td class="duration">
+    4.812s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="支付宝车主签名失败">zfbsignerror</span>
+      </td>
+  <td class="duration">
+    3.146s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">cloud.sign.oldsign.JieShuno</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  <span class="description" title="捷顺老验签">jssignold</span>
+      </td>
+  <td class="duration">
+    3.397s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">cloud.sign.oldsign.WxIsvo</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  <span class="description" title="微信车主平台老验签">wxisvoldsign</span>
+      </td>
+  <td class="duration">
+    3.398s
   </td>
   <td class="result">
         

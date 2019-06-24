@@ -15,24 +15,16 @@
                 </methods>
             </class>
 
-            <!--<class name="cloud.sign.newsign.JieShun">-->
-                <!--<methods>-->
-                    <!--<include name="jieshun" />-->
-                <!--</methods>-->
-            <!--</class>-->
-            <!--<class name="cloud.Order.dk.JieShunDk">-->
-                <!--<methods>-->
-                    <!--<include name="jieshundk" />-->
-                <!--</methods>-->
-            <!--</class>-->
-
-
-            <!-- 老验签 -->
-            <!--<class name="cloud.sign.oldsign.WxIsvo">-->
-            <!--<methods>-->
-            <!--<include name="wxisvoldsign" />-->
-            <!--</methods>-->
-            <!--</class>-->
+            <class name="cloud.sign.newsign.JieShun">
+                <methods>
+                    <include name="jieshun" />
+                </methods>
+            </class>
+            <class name="cloud.order.dk.JieShunDk">
+                <methods>
+                    <include name="jieshundk" />
+                </methods>
+            </class>
 
         </classes>
     </test>
