@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite_all" allow-return-values="true" parallel="methods" thread-count="8">
+	<test name="QueryOrderTest" verbose="1">
+        <classes>
+            <!-- 订单列表查询  -->
+            <class name="cloud.order.query.OrderList">
+                <methods>
+                    <include name="orderlist0" />
+                    <include name="orderlist1" />
+                    <include name="orderlist2" />
+                    <include name="orderlist3" />
+                </methods>
+            </class>
+            <!-- 订单详情查询  -->
+            <class name="cloud.order.query.OrderDetails">
+                <methods>
+                    <include name="orderdetails" />
+                </methods>
+            </class>
+            <!-- 订单反查  -->
+            <class name="cloud.order.query.OrderFc">
+                <methods>
+                    <include name="orderfc" />
+                </methods>
+            </class>
+            <!-- 订单可用支付方式查询 -->
+            <class name="cloud.order.query.OrderPayType">
+                <methods>
+                    <include name="orderpaytype" />
+                </methods>
+            </class>
+            <!--订单主表查询 -->
+            <class name="cloud.order.query.OrderMainQurey">
+                <methods>
+                    <include name="ordermainquery" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+</suite>
+

@@ -1,0 +1,15 @@
+server:
+    port: 8181
+
+#Mybatis config
+spring:
+    datasource:
+        name: test
+        url: jdbc:mysql://10.10.203.10:3306/cloud-db
+        username: test
+        password: Jht123456
+        driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mappers-locations: classpath:mappers/*Mapper.xml
+  type-aliases-package: org.zt.pojo

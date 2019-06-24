@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite_all" allow-return-values="true" verbose="2">
+	<test name="springbootorder" verbose="1">
+        <classes>
+            <!--新验签-->
+            <class name="cloud.sign.newsign.WxIsv">
+                <methods>
+                    <include name="wxisv" />
+                </methods>
+            </class>
+            <class name="cloud.order.dk.WxIsvDk">
+                <methods>
+                    <include name="wxisvdk" />
+                    <include name="wxrefund" />
+                </methods>
+            </class>
+
+            <!--<class name="cloud.sign.newsign.JieShun">-->
+                <!--<methods>-->
+                    <!--<include name="jieshun" />-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="cloud.Order.dk.JieShunDk">-->
+                <!--<methods>-->
+                    <!--<include name="jieshundk" />-->
+                <!--</methods>-->
+            <!--</class>-->
+
+
+            <!-- 老验签 -->
+            <!--<class name="cloud.sign.oldsign.WxIsvo">-->
+            <!--<methods>-->
+            <!--<include name="wxisvoldsign" />-->
+            <!--</methods>-->
+            <!--</class>-->
+
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+</suite>
+

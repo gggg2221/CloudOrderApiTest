@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite_all" allow-return-values="true" verbose="10">
+	<test name="ZdfOrderTest" verbose="1">
+        <classes>
+
+             <!--生成订单  -->
+            <!--<class name="OrderZdf.MakeCarOrder">-->
+                <!--<methods>-->
+                    <!--<include name="makecarorder" />-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="OrderZdf.MakenoCarOrder">-->
+                <!--<methods>-->
+                    <!--<include name="makenocarorder" />-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="OrderZdf.MakeMonOrder">-->
+                <!--<methods>-->
+                    <!--<include name="makemonorder" />-->
+                <!--</methods>-->
+            <!--</class>-->
+
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+</suite>
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite_all" allow-return-values="true" parallel="methods" thread-count="15" verbose="2">
+	<test name="SignTest" verbose="2">
+        <classes>
+            <!--新验签-->
+            <class name="cloud.sign.newsign.JieShun">
+                <methods>
+                    <include name="jieshun" />
+                    <include name="jssigerror" />
+                    <include name="jsclose" />
+                    <include name="sigyesterday" />
+                    <include name="redisscusig" />
+                    <include name="redisfail" />
+                </methods>
+            </class>
+            <class name="cloud.sign.newsign.WxIsv">
+                <methods>
+
+                    <include name="wxisv" />
+                    <include name="wxsignerror" />
+                    <include name="wxclose" />
+                </methods>
+            </class>
+            <class name="cloud.sign.newsign.ZfbIsv">
+                <methods>
+
+                    <include name="zfbisv" />
+                    <include name="zfbsignerror" />
+                    <include name="zfbclose" />
+                </methods>
+            </class>
+            <!--老验签-->
+            <class name="cloud.sign.oldsign.JieShuno">
+                <methods>
+                    <include name="jssignold" />
+                </methods>
+            </class>
+
+            <class name="cloud.sign.oldsign.WxIsvo">
+                <methods>
+                    <include name="wxisvoldsign" />
+                </methods>
+            </class>
+
+            <class name="cloud.sign.oldsign.ZfbIsvo">
+                <methods>
+                    <include name="zfbisvoldsign" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+</suite>
+
