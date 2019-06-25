@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="springbootorder"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="17.840">
+  <properties />
+  
+  
+            <testcase name="wxisvdk" time="12.810" classname="cloud.order.dk.WxIsvDk" />
+                <testcase name="wxrefund" time="5.030" classname="cloud.order.dk.WxIsvDk" />
+      
+</testsuite>
