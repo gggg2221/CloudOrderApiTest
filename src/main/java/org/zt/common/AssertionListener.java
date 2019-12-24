@@ -63,7 +63,7 @@ public class AssertionListener extends TestListenerAdapter {
 	}
 
 	private StackTraceElement[] getKeyStackTrace(ITestResult tr, StackTraceElement[] stackTraceElements) {
-		List<StackTraceElement> ets = new ArrayList<StackTraceElement>();
+		List<StackTraceElement> ets = new ArrayList<>();
 		for (StackTraceElement stackTraceElement : stackTraceElements) {
 			if (stackTraceElement.getClassName().equals(tr.getTestClass().getName())) {
 				ets.add(stackTraceElement);

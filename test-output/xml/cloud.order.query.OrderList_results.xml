@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="QueryOrderTest"
+           tests="4"
+           failures="1"
+           errors="0"
+           skipped="0"
+           time="12.037">
+  <properties />
+            <testcase name="orderlist3" time="2.959" classname="cloud.order.query.OrderList">
+                <failure type="java.lang.Throwable"
+                  message="(null)"
+              >
+<![CDATA[java.lang.Throwable
+  message : 查询数量不正确与实际数据不匹配(查询时间单位内的所有订单)实际订单数量:1 expected [true] but found [false] in method : .orderlist3(OrderList:71)
+  cloud.order.query.OrderList.orderlist3(OrderList.java:71)
+]]>
+      </failure>
+
+          </testcase>
+  
+  
+            <testcase name="orderlist0" time="3.157" classname="cloud.order.query.OrderList" />
+                <testcase name="orderlist2" time="2.948" classname="cloud.order.query.OrderList" />
+                <testcase name="orderlist1" time="2.973" classname="cloud.order.query.OrderList" />
+      
+</testsuite>

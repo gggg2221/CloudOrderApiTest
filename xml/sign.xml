@@ -3,24 +3,24 @@
 	<test name="SignTest" verbose="2">
         <classes>
             <!--新验签-->
-            <class name="cloud.sign.newsign.JieShun">
-                <methods>
-                    <include name="jieshun" />
-                    <include name="jssigerror" />
-                    <include name="jsclose" />
-                    <include name="sigyesterday" />
-                    <include name="redisscusig" />
-                    <include name="redisfail" />
-                </methods>
-            </class>
-            <class name="cloud.sign.newsign.WxIsv">
-                <methods>
+            <!--<class name="cloud.sign.newsign.JieShun">-->
+                <!--<methods>-->
+                    <!--<include name="jieshun" />-->
+                    <!--<include name="jssigerror" />-->
+                    <!--<include name="jsclose" />-->
+                    <!--<include name="sigyesterday" />-->
+                    <!--<include name="redisscusig" />-->
+                    <!--<include name="redisfail" />-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="cloud.sign.newsign.WxIsv">-->
+                <!--<methods>-->
 
-                    <include name="wxisv" />
-                    <include name="wxsignerror" />
-                    <include name="wxclose" />
-                </methods>
-            </class>
+                    <!--<include name="wxisv" />-->
+                    <!--<include name="wxsignerror" />-->
+                    <!--<include name="wxclose" />-->
+                <!--</methods>-->
+            <!--</class>-->
             <class name="cloud.sign.newsign.ZfbIsv">
                 <methods>
 
@@ -30,23 +30,23 @@
                 </methods>
             </class>
             <!--老验签-->
-            <class name="cloud.sign.oldsign.JieShuno">
-                <methods>
-                    <include name="jssignold" />
-                </methods>
-            </class>
+            <!--<class name="cloud.sign.oldsign.JieShuno">-->
+                <!--<methods>-->
+                    <!--<include name="jssignold" />-->
+                <!--</methods>-->
+            <!--</class>-->
 
-            <class name="cloud.sign.oldsign.WxIsvo">
-                <methods>
-                    <include name="wxisvoldsign" />
-                </methods>
-            </class>
+            <!--<class name="cloud.sign.oldsign.WxIsvo">-->
+                <!--<methods>-->
+                    <!--<include name="wxisvoldsign" />-->
+                <!--</methods>-->
+            <!--</class>-->
 
-            <class name="cloud.sign.oldsign.ZfbIsvo">
-                <methods>
-                    <include name="zfbisvoldsign" />
-                </methods>
-            </class>
+            <!--<class name="cloud.sign.oldsign.ZfbIsvo">-->
+                <!--<methods>-->
+                    <!--<include name="zfbisvoldsign" />-->
+                <!--</methods>-->
+            <!--</class>-->
         </classes>
     </test>
     <listeners>

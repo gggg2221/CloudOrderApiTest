@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="springbootorder"
            tests="1"
-           failures="0"
+           failures="1"
            errors="0"
            skipped="0"
-           time="2.026">
+           time="2.538">
   <properties />
+            <testcase name="wxisv" time="2.538" classname="cloud.sign.newsign.WxIsv">
+                <failure type="java.lang.Throwable"
+                  message="(null)"
+              >
+<![CDATA[java.lang.Throwable
+  message : 微信车主验签状态：0 expected [true] but found [false] in method : .wxisv(WxIsv:27)
+  cloud.sign.newsign.WxIsv.wxisv(WxIsv.java:27)
+]]>
+      </failure>
+
+          </testcase>
   
   
-            <testcase name="wxisv" time="2.026" classname="cloud.sign.newsign.WxIsv" />
-      
+  
 </testsuite>

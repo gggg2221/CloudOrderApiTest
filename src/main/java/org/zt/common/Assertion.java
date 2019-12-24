@@ -8,9 +8,11 @@ import org.testng.Assert;
 
 public class Assertion {
 
+    private Assertion(){}
+
 	public static boolean flag = true;
 
-	public static List<Error> errors = new ArrayList<Error>();
+	public static List<Error> errors = new ArrayList<>();
 
 	public static void verifyEquals(Object actual, Object expected) {
 		try {

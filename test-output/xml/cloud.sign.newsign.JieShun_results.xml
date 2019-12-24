@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="springbootorder"
+<testsuite name="SignTest"
            tests="1"
-           failures="0"
+           failures="1"
            errors="0"
            skipped="0"
-           time="2.170">
+           time="4.163">
   <properties />
+            <testcase name="jieshun" time="4.163" classname="cloud.sign.newsign.JieShun">
+                <failure type="java.lang.Throwable"
+                  message="(null)"
+              >
+<![CDATA[java.lang.Throwable
+  message : 捷顺验签状态：0 expected [true] but found [false] in method : .jieshun(JieShun:34)
+  cloud.sign.newsign.JieShun.jieshun(JieShun.java:34)
+]]>
+      </failure>
+
+          </testcase>
   
   
-            <testcase name="jieshun" time="2.170" classname="cloud.sign.newsign.JieShun" />
-      
+  
 </testsuite>

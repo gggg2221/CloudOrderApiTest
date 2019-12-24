@@ -6,23 +6,20 @@ import static com.jayway.restassured.RestAssured.given;
 
 public class ApiRequst {
 
+    private ApiRequst(){}
+
 	// 订单api
-	public static Response OrderApiPost(String url, String json) {
+	public static Response orderapipost(String url, String json) {
 		Response response = given().contentType("application/json;charset=UTF-8").body(json).post(url);
 		return response;
 	}
 
     // 验签反查api
-    public static Response SignApiPost(String url,String value1,String value2) {
+    public static Response signapipost(String url, String value1, String value2) {
         Response response = given().contentType("application/x-www-form-urlencoded;charset=UTF-8").param("key",value1).param("sign",value2).post(url);
         return response;
     }
 
-//    // 老验签
-//    public static Response SignOldPost(String url,String value) {
-//        Response response = given().contentType("application/x-www-form-urlencoded;charset=UTF-8").param("key",value).post(url);
-//        return response;
-//    }
 
 	// public static String getAppToken(){
 	// RestAssured.baseURI = "http://localhost:4567";

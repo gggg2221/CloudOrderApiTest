@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.sql.SQLException;
 
-import static org.zt.common.MysqlJdbc.Postdata;
+import static org.zt.common.MysqlJdbc.postdata;
 
 @Listeners({ AssertionListener.class })
 @SpringBootTest(classes = { ApplicationTest.class })
@@ -23,8 +23,8 @@ public class OrderMainQurey extends AbstractTestNGSpringContextTests {
 
         @Test(description = "订单主表查询")
         public void ordermainquery() throws SQLException {
-            String requstjson = Postdata("cloudtestdata","cloud_order","ordermainquery","");
-            String res = ApiRequst.OrderApiPost(Constants.ORDER_URL, requstjson).asString();
+            String requstjson = postdata("cloudtestdata","cloud_order","ordermainquery","");
+            String res = ApiRequst.orderapipost(Constants.ORDER_URL, requstjson).asString();
             String transactionId = (Regxvalue.getSubUtilSimple(res, regx));
             if(!transactionId.equals("")) {
                 Assertion.verifyTrue(!transactionId.equals(""), "订单主表查询");

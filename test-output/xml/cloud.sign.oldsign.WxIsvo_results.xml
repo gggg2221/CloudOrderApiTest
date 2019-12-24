@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SignTest"
+           tests="1"
+           failures="1"
+           errors="0"
+           skipped="0"
+           time="2.605">
+  <properties />
+            <testcase name="wxisvoldsign" time="2.605" classname="cloud.sign.oldsign.WxIsvo">
+                <failure type="java.lang.Throwable"
+                  message="(null)"
+              >
+<![CDATA[java.lang.Throwable
+  message : 微信车主验签状态：0 expected [true] but found [false] in method : .wxisvoldsign(WxIsvo:30)
+  cloud.sign.oldsign.WxIsvo.wxisvoldsign(WxIsvo.java:30)
+]]>
+      </failure>
+
+          </testcase>
+  
+  
+  
+</testsuite>

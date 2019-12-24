@@ -2,7 +2,7 @@ package org.zt.common;
 
 import java.io.IOException;
 import java.util.Properties;
-
+import org.apache.log4j.Logger;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
@@ -24,7 +24,7 @@ public class KafkaTools{
         props.put("value.serializer",
                 "org.apache.kafka.common.serialization.StringSerializer");
 
-        producer = new KafkaProducer<String, String>(props);
+        producer = new KafkaProducer<>(props);
     }
 
     //write data
@@ -40,7 +40,7 @@ public class KafkaTools{
     }
 
     //close con
-    public void produceclose() throws IOException {
+    public void produceclose() {
 
         producer.close();
     }

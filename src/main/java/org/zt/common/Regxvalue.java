@@ -1,6 +1,5 @@
 package org.zt.common;
 
-//import java.text.SimpleDateFormat;  
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -10,17 +9,18 @@ public class Regxvalue {
 	/**
 	 * 正则表达式匹配两个指定字符串中间的内容
 	 * 
-	 * @param soap
+	 * @paramsoap
 	 * @return
 	 */
+	private Regxvalue(){}
+
 	public static List<String> getSubUtil(String soap, String rgex) {
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 		Pattern pattern = Pattern.compile(rgex);// 匹配的模式
 		Matcher m = pattern.matcher(soap);
 		while (m.find()) {
 			int i = 1;
 			list.add(m.group(i));
-			i++;
 		}
 		return list;
 	}

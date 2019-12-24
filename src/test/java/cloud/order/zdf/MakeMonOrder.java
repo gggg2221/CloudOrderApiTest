@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.sql.SQLException;
 
-import static org.zt.common.MysqlJdbc.Postdata;
+import static org.zt.common.MysqlJdbc.postdata;
 @Listeners({ AssertionListener.class })
 @SpringBootTest(classes = { ApplicationTest.class })
 public class MakeMonOrder extends AbstractTestNGSpringContextTests {
@@ -18,11 +18,11 @@ public class MakeMonOrder extends AbstractTestNGSpringContextTests {
 
     @Test(groups = "smoke",description = "生成月卡订单")
     public void makemonorder() throws SQLException {
-        String requstjson = Postdata("cloudtestdata","cloud_order", "makemonorder", "");
-        String res = ApiRequst.OrderApiPost(Constants.ORDER_URL, requstjson).asString();
+        String requstjson = postdata("cloudtestdata","cloud_order", "makemonorder", "");
+        String res = ApiRequst.orderapipost(Constants.ORDER_URL, requstjson).asString();
         String order = Regxvalue.getSubUtilSimple(res, regs);
         if (!order.equals("")) {
-            String source= RedisTools.RedData(order,"");
+            String source= RedisTools.reddata(order,"");
             Assertion.verifyTrue(!source.equals(""), "生成月卡订单");
         }
         else {

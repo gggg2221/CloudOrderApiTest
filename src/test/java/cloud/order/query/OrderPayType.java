@@ -14,7 +14,7 @@ import org.zt.common.Assertion;
 import org.zt.common.Constants;
 import org.zt.common.Regxvalue;
 
-import static org.zt.common.MysqlJdbc.Postdata;
+import static org.zt.common.MysqlJdbc.postdata;
 
 @Listeners({ AssertionListener.class })
 @SpringBootTest(classes = { ApplicationTest.class })
@@ -25,8 +25,8 @@ public class OrderPayType extends AbstractTestNGSpringContextTests {
 	@Test(description = "订单可用支付方式查询")
 	// 订单可用支付方式查询
 	public void orderpaytype() throws SQLException {
-        String requstjson = Postdata("cloudtestdata","cloud_order","orderpaytype","");
-		String res = ApiRequst.OrderApiPost(Constants.ORDER_URL, requstjson).asString();
+        String requstjson = postdata("cloudtestdata","cloud_order","orderpaytype","");
+		String res = ApiRequst.orderapipost(Constants.ORDER_URL, requstjson).asString();
 		String pytype = (Regxvalue.getSubUtilSimple(res, rgex));
 		if (!pytype.equals("")) {
 			Assertion.verifyTrue(!pytype.equals(""), "查询支付方式成功:");

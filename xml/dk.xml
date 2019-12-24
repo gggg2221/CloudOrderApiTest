@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite_all" allow-return-values="true" verbose="2">
-	<test name="springbootorder" verbose="1">
+    <test name="springbootorder" verbose="1">
         <classes>
             <!--新验签-->
-            <class name="cloud.sign.newsign.WxIsv">
-                <methods>
-                    <include name="wxisv" />
-                </methods>
-            </class>
-            <class name="cloud.order.dk.WxIsvDk">
-                <methods>
-                    <include name="wxisvdk" />
-                    <include name="wxrefund" />
-                </methods>
-            </class>
+            <!--<class name="cloud.sign.newsign.WxIsv">-->
+                <!--<methods>-->
+                    <!--<include name="wxisv"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="cloud.order.dk.WxIsvDk">-->
+                <!--<methods>-->
+                    <!--<include name="wxisvdk"/>-->
+                    <!--&lt;!&ndash;<include name="wxrefund"/>&ndash;&gt;-->
+                <!--</methods>-->
+            <!--</class>-->
+        <class name="cloud.sign.newsign.ZfbIsv">
+            <methods>
+                <include name="zfbisv"/>
+            </methods>
+        </class>
+        <class name="cloud.order.dk.ZfbIsvDk">
+            <methods>
+                <include name="zfbisvdk"/>
+                <!--<include name="zfbrefund"/>-->
+            </methods>
+        </class>
 
-            <class name="cloud.sign.newsign.JieShun">
-                <methods>
-                    <include name="jieshun" />
-                </methods>
-            </class>
-            <class name="cloud.order.dk.JieShunDk">
-                <methods>
-                    <include name="jieshundk" />
-                </methods>
-            </class>
+            <!--<class name="cloud.sign.newsign.JieShun">-->
+            <!--<methods>-->
+            <!--<include name="jieshun" />-->
+            <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="cloud.order.dk.JieShunDk">-->
+            <!--<methods>-->
+            <!--<include name="jieshundk" />-->
+            <!--</methods>-->
+            <!--</class>-->
 
         </classes>
     </test>

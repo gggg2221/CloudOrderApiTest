@@ -5,15 +5,17 @@ import java.sql.*;
 
 public class MysqlJdbc {
 
-    private static final String name = "com.mysql.jdbc.Driver";
-    private static final String user = "test";
-    private static final String password = "Jht123456";
+    private static final String NAME = "com.mysql.cj.jdbc.Driver";
+    private static final String USER = "test";
+    private static final String PWD = "Jht123456";
 
     //请求数据列名
     private static String resdata = null;
     private static Connection conn = null;
     private static Statement stmt = null;
     private static ResultSet rs = null;
+
+    private MysqlJdbc(){}
 
 
     //打开数据库(测试数据)
@@ -22,8 +24,8 @@ public class MysqlJdbc {
         String url = "jdbc:mysql://10.10.203.10:3306/" + db + "";
         // 注册 MysqlJdbc 驱动
         try {
-            Class.forName(name);
-            conn = DriverManager.getConnection(url, user, password);
+            Class.forName(NAME);
+            conn = DriverManager.getConnection(url, USER, PWD);
             stmt = conn.createStatement();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -42,12 +44,12 @@ public class MysqlJdbc {
     }
 
     //取数据
-    public static String Postdata(String dbase, String table, String classname, String sign) throws SQLException {
+    public static String postdata(String dbase, String table, String classname, String sign) throws SQLException {
         testldb(dbase);
         String sql;
         stmt = conn.createStatement();
 
-        if (sign != "") {
+        if (!sign.equals("")) {
             sql = "SELECT sign from " + table + " where classname='" + classname + "'";
             rs = stmt.executeQuery(sql);
             // 展开结果集数据库

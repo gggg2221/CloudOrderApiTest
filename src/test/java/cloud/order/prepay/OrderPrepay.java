@@ -24,7 +24,7 @@ public class OrderPrepay extends AbstractTestNGSpringContextTests {
         String order= MakeCarOrder.makecarorder();
         String zfbjson = "{\"attributes\": {\"appType\":\"APP_JSCARLIFE\",\"channelId\": \"ZFB\",\"orderNo\": \""
                 + order + "\"},\"serviceId\": \"ac.pay.prepay\"}";
-        String zfbsta = ApiRequst.OrderApiPost(Constants.ORDER_URL, zfbjson).asString();
+        String zfbsta = ApiRequst.orderapipost(Constants.ORDER_URL, zfbjson).asString();
         String sql="select "+col+" from cs_biz_order where ORDER_NO='"+order+"'";
         String redata=MysqlJdbc.seledata("cloud-db",sql,col);
         Assertion.verifyTrue(!redata.equals(""), "创建支付宝车牌预支付订单"+zfbsta);
@@ -35,7 +35,7 @@ public class OrderPrepay extends AbstractTestNGSpringContextTests {
         String order= MakeCarOrder.makecarorder();
         String zfbjson = "{\"attributes\": {\"appType\":\"APP_JSCARLIFE\",\"channelId\": \"WX\",\"orderNo\": \""
                 + order + "\"},\"serviceId\": \"ac.pay.prepay\"}";
-        String wxbsta = ApiRequst.OrderApiPost(Constants.ORDER_URL, zfbjson).asString();
+        String wxbsta = ApiRequst.orderapipost(Constants.ORDER_URL, zfbjson).asString();
         String sql="select "+col+" from cs_biz_order where ORDER_NO='"+order+"'";
         String redata=MysqlJdbc.seledata("cloud-db",sql,col);
         Assertion.verifyTrue(!redata.equals(""), "创建微信车牌预支付订单"+wxbsta);

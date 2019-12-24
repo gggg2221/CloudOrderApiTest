@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.sql.SQLException;
 
-import static org.zt.common.MD5.StringMD5;
+import static org.zt.common.MD5.stringmd5;
 
 
 @Listeners({ AssertionListener.class })
@@ -21,9 +21,9 @@ public class JieShuno extends AbstractTestNGSpringContextTests {
 
     @Test(description = "捷顺老验签")
     public void jssignold() throws SQLException {
-        String requstjson=MysqlJdbc.Postdata("cloudtestdata","signold","jssignold","");
-        String sign=StringMD5(requstjson+Constants.parksig);
-        String response= ApiRequst.SignApiPost(Constants.OldSIGN_URL,requstjson,sign).asString();
+        String requstjson=MysqlJdbc.postdata("cloudtestdata","signold","jssignold","");
+        String sign= stringmd5(requstjson+Constants.PARKSIG);
+        String response= ApiRequst.signapipost(Constants.OLDSIGN_URL,requstjson,sign).asString();
         String signstatus = (Regxvalue.getSubUtilSimple(response, regx));
         int staus = Integer.valueOf(signstatus).intValue();
         Assertion.verifyTrue(staus==1 , "捷顺验签状态："+staus);

@@ -6,13 +6,15 @@ import java.util.Random;
 
 public class DataTimes {
 
-    public static String Dat(){
+    private DataTimes(){}
+
+    public static String dat(){
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dtime=(df.format(new Date()));
         return dtime;
     }
 
-    public static String Randoms(){
+    public static String randoms(){
         String base = "1234567890abcdefghijklmnopqrstuvwxyz";
         Random random = new Random();
         StringBuffer numb = new StringBuffer();
@@ -23,11 +25,4 @@ public class DataTimes {
         }
         return numb.toString();
         }
-
-//        public static void main(String args[]){
-//        for (int i=1;i<10;i++){
-//            String s= Random();
-//            System.out.println(s);
-//        }
-
 }
