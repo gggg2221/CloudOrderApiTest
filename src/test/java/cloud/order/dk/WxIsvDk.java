@@ -30,23 +30,24 @@ public class WxIsvDk extends AbstractTestNGSpringContextTests {
     @Autowired
     OrderController c;
 
+    @Autowired
+    KafkaTools kf;
+
     @Test(groups = "smoke", description = "微信代扣")
     public void wxisvdk() throws InterruptedException {
-        KafkaTools kf = new KafkaTools();
-        //入场验签写kafka(验签case已经完成，此处不需要实现)
         //发送出场数据到kafka
-        String outjson=Constants.wxoutjson;
+        String outjson = Constants.wxoutjson;
         kf.produce(Constants.DKTOPIC, outjson);
         Thread.sleep(2000);
         //查询dk订单是否成功
-        String order1 = c.dkorder(Constants.WXISV,Constants.SATA);
+        String order1 = c.dkorder(Constants.WXISV, Constants.SATA);
         wxorderno = order1;
         Assertion.verifyTrue(!order1.equals(""), "微信代扣成功");
     }
 
     @Test(dependsOnMethods = {"wxisvdk"}, groups = "smoke", description = "微信退款")
     public void wxrefund() {
-        String message=Refound.reforder(wxorderno);
+        String message = Refound.reforder(wxorderno);
         Assertion.verifyTrue(message.equals("成功"), "退款成功");
     }
 }

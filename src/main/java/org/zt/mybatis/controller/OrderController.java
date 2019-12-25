@@ -1,6 +1,5 @@
 package org.zt.mybatis.controller;
 
-import org.apache.ibatis.annotations.Param;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.zt.mybatis.entity.Order;

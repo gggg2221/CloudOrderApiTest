@@ -38,8 +38,8 @@ public class Constants {
     //支付宝isv车牌：藏-ZFB999
     public static final String ZFBISV="藏-ZFB999";
 
-    //微信isv车牌：藏-MMMMWX
-    public static final String WXISV="藏-ZZ1234";
+    //微信isv车牌：藏-MMMMWX,受理机构：藏-ZZ1234
+    public static final String WXISV="藏-MMMMWX";
 
     //捷顺车牌：藏-JK1111
     public static final String JIESHUN="藏-JK1111";

@@ -7,7 +7,6 @@ import org.zt.mybatis.entity.Order;
 import org.zt.mybatis.service.OrderService;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class OrderServiceImpl implements OrderService {
