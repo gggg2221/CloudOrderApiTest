@@ -1,5 +1,8 @@
 package org.zt.common;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Random;

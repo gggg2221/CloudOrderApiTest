@@ -25,19 +25,21 @@ import org.zt.mybatis.controller.OrderController;
 @Rollback(false)
 public class ZfbIsvDk extends AbstractTestNGSpringContextTests {
 
-    private static String zfborderno = "";
-
     @Autowired
     OrderController c;
 
     @Autowired
     KafkaTools kf;
 
+    @Autowired
+    Refound refound;
+
+    private String zfborderno = "";
+
     @Test(groups = "smoke", description = "支付宝代扣")
     public void zfbisvdk() throws InterruptedException {
         //发送出场数据到kafka
-        String outjson = Constants.zfboutjson;
-        kf.produce(Constants.DKTOPIC, outjson);
+        kf.produce(Constants.DKTOPIC, Constants.zfboutjson);
         Thread.sleep(2000);
         //查询dk订单是否成功
         String order2 = c.dkorder(Constants.ZFBISV, Constants.SATA);
@@ -47,7 +49,7 @@ public class ZfbIsvDk extends AbstractTestNGSpringContextTests {
 
     @Test(dependsOnMethods = {"zfbisvdk"}, groups = "smoke", description = "支付宝退款")
     public void zfbrefund() {
-        String message = Refound.reforder(zfborderno);
+        String message = refound.reforder(zfborderno);
         Assertion.verifyTrue(message.equals("成功"), "退款成功");
     }
 }

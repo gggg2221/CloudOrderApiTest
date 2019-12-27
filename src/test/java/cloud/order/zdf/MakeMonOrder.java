@@ -1,5 +1,6 @@
 package cloud.order.zdf;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.zt.ApplicationTest;
 import org.zt.common.*;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,13 +17,22 @@ public class MakeMonOrder extends AbstractTestNGSpringContextTests {
 
     String regs="\"orderNo\":\"(.+?)\"";
 
+    @Autowired
+    ApiRequst re;
+
+    @Autowired
+    RedisTools redis;
+
+    @Autowired
+    Constants con;
+
     @Test(groups = "smoke",description = "生成月卡订单")
     public void makemonorder() throws SQLException {
         String requstjson = postdata("cloudtestdata","cloud_order", "makemonorder", "");
-        String res = ApiRequst.orderapipost(Constants.ORDER_URL, requstjson).asString();
+        String res = re.orderapipost(con.ORDER_URL, requstjson).asString();
         String order = Regxvalue.getSubUtilSimple(res, regs);
         if (!order.equals("")) {
-            String source= RedisTools.reddata(order,"");
+            String source= redis.reddata(order,"");
             Assertion.verifyTrue(!source.equals(""), "生成月卡订单");
         }
         else {

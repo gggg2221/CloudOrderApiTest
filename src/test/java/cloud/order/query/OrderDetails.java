@@ -2,6 +2,7 @@ package cloud.order.query;
 
 import java.sql.SQLException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.zt.ApplicationTest;
 import org.zt.common.*;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,12 +18,17 @@ public class OrderDetails extends AbstractTestNGSpringContextTests {
 
 	String rgex = ".*\"orderNo\":\"(.+?)\"";
 
+	@Autowired
+    Constants con;
+
+	@Autowired
+    ApiRequst re;
 
 	@Test(description = "订单详情查询")
 	// 查询订单详情
 	public void orderdetails() throws SQLException {
         String requstjson = postdata("cloudtestdata","cloud_order","orderdetails","");
-		String res = ApiRequst.orderapipost(Constants.ORDER_URL, requstjson).asString();
+		String res = re.orderapipost(con.ORDER_URL, requstjson).asString();
 		String order = (Regxvalue.getSubUtilSimple(res, rgex));
 		if (!order.equals("")) {
 			Assertion.verifyTrue(!order.equals(""), "查询成功");

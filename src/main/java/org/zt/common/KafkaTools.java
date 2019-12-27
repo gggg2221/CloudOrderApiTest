@@ -1,13 +1,13 @@
 package org.zt.common;
 
-import java.io.IOException;
 import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class KafkaTools{
 
     private final KafkaProducer<String, String> producer;

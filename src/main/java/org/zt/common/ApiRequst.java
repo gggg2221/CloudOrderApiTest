@@ -1,21 +1,24 @@
 package org.zt.common;
 
 import com.jayway.restassured.response.Response;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import static com.jayway.restassured.RestAssured.given;
 
+@Service
 public class ApiRequst {
 
     private ApiRequst(){}
 
 	// 订单api
-	public static Response orderapipost(String url, String json) {
+	public Response orderapipost(String url, String json) {
 		Response response = given().contentType("application/json;charset=UTF-8").body(json).post(url);
 		return response;
 	}
 
     // 验签反查api
-    public static Response signapipost(String url, String value1, String value2) {
+    public Response signapipost(String url, String value1, String value2) {
         Response response = given().contentType("application/x-www-form-urlencoded;charset=UTF-8").param("key",value1).param("sign",value2).post(url);
         return response;
     }

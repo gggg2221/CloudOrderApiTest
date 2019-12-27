@@ -25,19 +25,21 @@ import org.zt.mybatis.controller.OrderController;
 @Rollback(false)
 public class WxIsvDk extends AbstractTestNGSpringContextTests {
 
-    private static String wxorderno = "";
-
     @Autowired
     OrderController c;
 
     @Autowired
     KafkaTools kf;
 
+    @Autowired
+    Refound refound;
+
+    private String wxorderno = "";
+
     @Test(groups = "smoke", description = "微信代扣")
     public void wxisvdk() throws InterruptedException {
         //发送出场数据到kafka
-        String outjson = Constants.wxoutjson;
-        kf.produce(Constants.DKTOPIC, outjson);
+        kf.produce(Constants.DKTOPIC, Constants.wxoutjson);
         Thread.sleep(2000);
         //查询dk订单是否成功
         String order1 = c.dkorder(Constants.WXISV, Constants.SATA);
@@ -47,7 +49,7 @@ public class WxIsvDk extends AbstractTestNGSpringContextTests {
 
     @Test(dependsOnMethods = {"wxisvdk"}, groups = "smoke", description = "微信退款")
     public void wxrefund() {
-        String message = Refound.reforder(wxorderno);
+        String message = refound.reforder(wxorderno);
         Assertion.verifyTrue(message.equals("成功"), "退款成功");
     }
 }

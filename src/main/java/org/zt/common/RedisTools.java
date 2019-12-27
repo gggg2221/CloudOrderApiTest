@@ -1,16 +1,17 @@
 package org.zt.common;
 
 
+import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 
-
+@Component
 public class RedisTools {
 
     private RedisTools(){}
 
 
     //主动付生成redis订单数据
-    public static String reddata(String redisorder, String key){
+    public String reddata(String redisorder, String key){
 
         //连接本地的 Redis 服务
         Jedis jedis = new Jedis(Constants.REDISIP,6379);

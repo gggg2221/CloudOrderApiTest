@@ -1,9 +1,6 @@
 package org.zt.common;
 
 
-import static org.zt.common.DataTimes.dat;
-import static org.zt.common.DataTimes.randoms;
-
 public class Constants {
 
     private Constants(){}
@@ -31,21 +28,27 @@ public class Constants {
     public static final String DKTOPIC = "dc.dk.park.out";
 
     //获取时间
-    public static final String SATA = dat();
+    public static final String SATA = DataTimes.dat();
     //获取代扣订单入库随机id
-    public static String ODERID = randoms();
+    public static String ODERID = DataTimes.randoms();
 
     //支付宝isv车牌：藏-ZFB999
     public static final String ZFBISV="藏-ZFB999";
 
     //微信isv车牌：藏-MMMMWX,受理机构：藏-ZZ1234
-    public static final String WXISV="藏-MMMMWX";
+    public static final String WXISV="藏-CS1111";
 
     //捷顺车牌：藏-JK1111
     public static final String JIESHUN="藏-JK1111";
 
     //车场code
     public static final String PARKCODE="20181213001";
+
+    //微信验签反查json
+    public static String wxsigjson="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\""+ WXISV +"\",\"inTime\":\""+ SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
+
+    //支付吧验签反查
+    public static String zfbsigjson="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\""+ ZFBISV +"\",\"inTime\":\""+ SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
 
     //微信代扣出场数据
     public static String wxoutjson= "{\"isReal\":0,\"parkName\":\"梅test\",\"ysMoney\":0.01,\"yhMoney\":0.0,\"inEquipName\":\"车场入口\",\"outMode\":\"NORMAL\",\"outOperator\":\"Admin\",\"outEquipCode\":\"2\",\"ssMoney\":0.01,\"freeMoney\":0,\"dkTag\":1,\"orderNo\":\"\",\"outCarPhoto\":\"20181213001/NISSP_IMG_PARK_OUT/20181112/1\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\",\"overTimeFlag\":0,\"idno\":\"01181016100552\",\"inRecordId\":\"" + ODERID + "\",\"payTypeName\":\"线上代扣\",\"carNumber\":\""+WXISV+"\",\"inTime\":\"" + SATA + "\",\"itemId\":\"" + ODERID + "\",\"outEquipName\":\"车场出口\",\"inEquipCode\":\"6\",\"parkCode\":\""+PARKCODE+"\",\"hgMoney\":0.0,\"outTime\":\"" + SATA + "\"}";
