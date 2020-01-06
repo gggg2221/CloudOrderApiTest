@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="1.310">
+           time="3.838">
   <properties />
   
   
-            <testcase name="zfbisv" time="1.310" classname="cloud.sign.newsign.ZfbIsv" />
+            <testcase name="zfbisv" time="3.838" classname="cloud.sign.newsign.ZfbIsv" />
       
 </testsuite>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite_all" allow-return-values="true" parallel="classes" thread-count="11" verbose="2">
-	<test name="AllApiTest" verbose="2">
+<suite name="Suite_all" allow-return-values="true" parallel="classes" verbose="5">
+	<test name="AllApiTest" thread-count="5" verbose="5">
 
         <!--<groups>-->
             <!--<run>-->

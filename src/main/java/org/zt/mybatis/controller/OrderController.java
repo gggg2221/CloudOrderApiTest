@@ -1,5 +1,6 @@
 package org.zt.mybatis.controller;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.zt.mybatis.entity.Order;
@@ -8,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value="/order")
@@ -20,14 +24,14 @@ public class OrderController {
     OrderServiceImpl orderService;
 
 
-//    @RequestMapping(value="/byno", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
-//    public Map<String,Object> byno(String orderNo) {
-//        Map<String,Object> orderMap = new HashMap();
-//        Order or = orderService.queryorder(orderNo);
-//        orderMap.put("or",or);
-//        return orderMap;
-//
-//    }
+    @RequestMapping(value="/byno", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
+    public Map<String,Object> byno(String carNo,String createTime) {
+        Map<String,Object> orderMap = new HashMap();
+        Order or = orderService.getdkorder(carNo ,createTime);
+        orderMap.put("order",or);
+        return orderMap;
+
+    }
 
     @RequestMapping(value="/byo", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
     public String byo(String orderNo) {
@@ -39,9 +43,8 @@ public class OrderController {
     //查询代扣订单
     @RequestMapping(value="/bno", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
     public String dkorder(String carNo,String createTime) {
-        Order or = orderService.getdkorder(carNo,createTime);
-        String dkorder=or.getOrderNo();
-        return dkorder;
-
+        Order order=orderService.getdkorder(carNo,createTime);
+        String or=order.getOrderNo();
+        return or;
     }
 }

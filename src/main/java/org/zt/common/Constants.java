@@ -29,13 +29,16 @@ public class Constants {
 
     //获取时间
     public static final String SATA = DataTimes.dat();
+    //加转译符号
+    public static String creattimes=" \"" + SATA + "\" ";
+
     //获取代扣订单入库随机id
     public static String ODERID = DataTimes.randoms();
 
     //支付宝isv车牌：藏-ZFB999
     public static final String ZFBISV="藏-ZFB999";
 
-    //微信isv车牌：藏-MMMMWX,受理机构：藏-ZZ1234
+    //微信isv车牌：藏-MMMMWX,受理机构：藏-ZZ1234 藏-CS1111
     public static final String WXISV="藏-CS1111";
 
     //捷顺车牌：藏-JK1111
@@ -55,4 +58,6 @@ public class Constants {
 
     //支付宝代扣出场数据
     public static String zfboutjson= "{\"isReal\":0,\"parkName\":\"梅test\",\"ysMoney\":0.01,\"yhMoney\":0.0,\"inEquipName\":\"车场入口\",\"outMode\":\"NORMAL\",\"outOperator\":\"Admin\",\"outEquipCode\":\"2\",\"ssMoney\":0.01,\"freeMoney\":0,\"dkTag\":1,\"orderNo\":\"\",\"outCarPhoto\":\"20181213001/NISSP_IMG_PARK_OUT/20181112/1\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\",\"overTimeFlag\":0,\"idno\":\"01181016100552\",\"inRecordId\":\"" + ODERID + "\",\"payTypeName\":\"线上代扣\",\"carNumber\":\""+ZFBISV+"\",\"inTime\":\"" + SATA + "\",\"itemId\":\"" + ODERID + "\",\"outEquipName\":\"车场出口\",\"inEquipCode\":\"6\",\"parkCode\":\""+PARKCODE+"\",\"hgMoney\":0.0,\"outTime\":\"" + SATA + "\"}";
+
 }
+

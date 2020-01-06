@@ -34,7 +34,7 @@ public class WxIsvDk extends AbstractTestNGSpringContextTests {
     @Autowired
     Refound refound;
 
-    private String wxorderno = "";
+    private String wxorderno;
 
     @Test(groups = "smoke", description = "微信代扣")
     public void wxisvdk() throws InterruptedException {
@@ -42,9 +42,11 @@ public class WxIsvDk extends AbstractTestNGSpringContextTests {
         kf.produce(Constants.DKTOPIC, Constants.wxoutjson);
         Thread.sleep(2000);
         //查询dk订单是否成功
-        String order1 = c.dkorder(Constants.WXISV, Constants.SATA);
-        wxorderno = order1;
-        Assertion.verifyTrue(!order1.equals(""), "微信代扣成功");
+        String order = c.dkorder(Constants.WXISV, Constants.creattimes);
+        System.out.println("+++++++++++++++++++++++++++++++++++"+Constants.creattimes);
+        this.wxorderno = order;
+        System.out.println("+++++++++++++++++++++++++++++++++++"+wxorderno);
+        Assertion.verifyTrue(wxorderno.length()>0, "微信代扣成功");
     }
 
     @Test(dependsOnMethods = {"wxisvdk"}, groups = "smoke", description = "微信退款")

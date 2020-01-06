@@ -34,17 +34,17 @@ public class ZfbIsvDk extends AbstractTestNGSpringContextTests {
     @Autowired
     Refound refound;
 
-    private String zfborderno = "";
+    private String zfborderno;
 
     @Test(groups = "smoke", description = "支付宝代扣")
     public void zfbisvdk() throws InterruptedException {
         //发送出场数据到kafka
         kf.produce(Constants.DKTOPIC, Constants.zfboutjson);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         //查询dk订单是否成功
-        String order2 = c.dkorder(Constants.ZFBISV, Constants.SATA);
-        zfborderno = order2;
-        Assertion.verifyTrue(!order2.equals(""), "支付宝代扣成功");
+        String order = c.dkorder(Constants.ZFBISV, Constants.creattimes);
+        this.zfborderno = order;
+        Assertion.verifyTrue(zfborderno.length()>0, "支付宝代扣成功");
     }
 
     @Test(dependsOnMethods = {"zfbisvdk"}, groups = "smoke", description = "支付宝退款")

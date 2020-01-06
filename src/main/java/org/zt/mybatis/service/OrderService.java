@@ -9,5 +9,6 @@ public interface OrderService {
 
     Order queryorder(String orderNo);
 
-    Order getdkorder(String carno, String time);
+    Order getdkorder(String carNo, String createTime);
+
 }
