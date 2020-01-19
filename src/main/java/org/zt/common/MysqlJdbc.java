@@ -1,6 +1,7 @@
 package org.zt.common;
 
 import java.sql.*;
+import java.util.Map;
 
 
 public class MysqlJdbc {
@@ -84,8 +85,7 @@ public class MysqlJdbc {
             return "nothing";
         }
     }
+
 }
-
-
 
 

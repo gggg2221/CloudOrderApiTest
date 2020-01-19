@@ -43,8 +43,9 @@ public class OrderController {
     //查询代扣订单
     @RequestMapping(value="/bno", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
     public String dkorder(String carNo,String createTime) {
-        Order order=orderService.getdkorder(carNo,createTime);
-        String or=order.getOrderNo();
-        return or;
+        Order or=orderService.getdkorder(carNo,createTime);
+        System.out.println(or);
+        String order=or.getOrderNo();
+        return order;
     }
 }

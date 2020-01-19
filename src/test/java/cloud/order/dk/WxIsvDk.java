@@ -15,6 +15,9 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.zt.mybatis.controller.OrderController;
+import org.zt.mybatis.entity.Order;
+
+import java.util.Map;
 
 
 @Listeners({AssertionListener.class})
@@ -42,16 +45,15 @@ public class WxIsvDk extends AbstractTestNGSpringContextTests {
         kf.produce(Constants.DKTOPIC, Constants.wxoutjson);
         Thread.sleep(2000);
         //查询dk订单是否成功
-        String order = c.dkorder(Constants.WXISV, Constants.creattimes);
-        System.out.println("+++++++++++++++++++++++++++++++++++"+Constants.creattimes);
+        String order = c.dkorder(Constants.wxcar, Constants.SATA);
+        System.out.println("+++++++++++++++++++++++++++++++++++"+order);
         this.wxorderno = order;
-        System.out.println("+++++++++++++++++++++++++++++++++++"+wxorderno);
         Assertion.verifyTrue(wxorderno.length()>0, "微信代扣成功");
     }
 
     @Test(dependsOnMethods = {"wxisvdk"}, groups = "smoke", description = "微信退款")
     public void wxrefund() {
-        String message = refound.reforder(wxorderno);
+        String message = refound.reforder(this.wxorderno);
         Assertion.verifyTrue(message.equals("成功"), "退款成功");
     }
 }

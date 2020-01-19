@@ -12,15 +12,13 @@
 <body>
 <h1>springbootorder</h1>
 <p>
-  Test duration: 19.368s
+  Test duration: 49.686s
 </p>
 
 
 
-
-
   <table class="resultsTable">
-    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
         <td colspan="3" class="group">cloud.order.dk.WxIsvDk</td>
       </tr>
@@ -30,15 +28,124 @@
                   <span class="description" title="微信代扣">wxisvdk</span>
       </td>
   <td class="duration">
-    4.934s
+    5.058s
   </td>
   <td class="result">
         
     
         
 
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter &apos;createTime&apos; not found. Available parameters are [arg1, arg0, param1, param2]</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)<br />
+              org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)<br />
+              com.sun.proxy.$Proxy83.selectOne(Unknown Source)<br />
+              org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)<br />
+              org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)<br />
+              org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)<br />
+              com.sun.proxy.$Proxy84.getdkorder(Unknown Source)<br />
+              org.zt.mybatis.service.impl.OrderServiceImpl.getdkorder(OrderServiceImpl.java:23)<br />
+              org.zt.mybatis.controller.OrderController.dkorder(OrderController.java:46)<br />
+              cloud.order.dk.WxIsvDk.wxisvdk(WxIsvDk.java:48)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:230)<br />
+              org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:180)<br />
+              org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:242)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:579)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:364)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1137)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1049)<br />
+              org.testng.TestNG.run(TestNG.java:1017)<br />
+              org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)<br />
+              org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">org.apache.ibatis.binding.BindingException: Parameter &apos;createTime&apos; not found. Available parameters are [arg1, arg0, param1, param2]</a><br />
+        <div class="stackTrace" id="exception-1">
+                      org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)<br />
+                      org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:120)<br />
+                      org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2719)<br />
+                      org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)<br />
+                      org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)<br />
+                      org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)<br />
+                      org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:493)<br />
+                      org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:457)<br />
+                      org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:46)<br />
+                      org.apache.ibatis.scripting.xmltags.TextSqlNode$BindingTokenParser.handleToken(TextSqlNode.java:77)<br />
+                      org.apache.ibatis.parsing.GenericTokenParser.parse(GenericTokenParser.java:77)<br />
+                      org.apache.ibatis.scripting.xmltags.TextSqlNode.apply(TextSqlNode.java:51)<br />
+                      org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32)<br />
+                      java.util.ArrayList.forEach(ArrayList.java:1255)<br />
+                      org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)<br />
+                      org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39)<br />
+                      org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:297)<br />
+                      org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)<br />
+                      org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)<br />
+                      org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)<br />
+                      org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.lang.reflect.Method.invoke(Method.java:498)<br />
+                      org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)<br />
+                      com.sun.proxy.$Proxy83.selectOne(Unknown Source)<br />
+                      org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)<br />
+                      org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)<br />
+                      org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)<br />
+                      com.sun.proxy.$Proxy84.getdkorder(Unknown Source)<br />
+                      org.zt.mybatis.service.impl.OrderServiceImpl.getdkorder(OrderServiceImpl.java:23)<br />
+                      org.zt.mybatis.controller.OrderController.dkorder(OrderController.java:46)<br />
+                      cloud.order.dk.WxIsvDk.wxisvdk(WxIsvDk.java:48)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.lang.reflect.Method.invoke(Method.java:498)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+                      org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:230)<br />
+                      org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:180)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:242)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:579)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+                      org.testng.TestRunner.run(TestRunner.java:505)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:364)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1137)<br />
+                      org.testng.TestNG.runSuites(TestNG.java:1049)<br />
+                      org.testng.TestNG.run(TestNG.java:1017)<br />
+                      org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)<br />
+                      org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)<br />
+                  </div>
+          </div>
       </td>
 </tr>
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
         <td colspan="3" class="group">cloud.sign.newsign.WxIsv</td>
       </tr>
@@ -48,7 +155,7 @@
                   <span class="description" title="微信车主平台验签及验签反查">wxisv</span>
       </td>
   <td class="duration">
-    3.973s
+    3.790s
   </td>
   <td class="result">
         

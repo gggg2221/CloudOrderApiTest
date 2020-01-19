@@ -1,6 +1,5 @@
 package org.zt.mybatis.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class Order {
@@ -44,9 +43,6 @@ public class Order {
 
 
     private String channelBusCode;
-
-    public Order() {
-    }
 
 
     public String getId() {

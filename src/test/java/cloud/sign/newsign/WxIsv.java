@@ -15,8 +15,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.zt.common.Assertion;
 import org.zt.common.AssertionListener;
-import org.zt.common.Constants;
-import org.zt.common.SignCom;
+import org.zt.common.SignPub;
 
 
 @Listeners({AssertionListener.class})
@@ -28,7 +27,7 @@ import org.zt.common.SignCom;
 public class WxIsv extends AbstractTestNGSpringContextTests {
 
     @Autowired
-    SignCom sign;
+    SignPub sign;
 
     @Test(description = "微信车主平台验签及验签反查")
     public void wxisv(){
