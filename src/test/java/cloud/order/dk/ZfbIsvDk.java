@@ -42,7 +42,7 @@ public class ZfbIsvDk extends AbstractTestNGSpringContextTests {
         kf.produce(Constants.DKTOPIC, Constants.zfboutjson);
         Thread.sleep(3000);
         //查询dk订单是否成功
-        String order = c.dkorder(Constants.ZFBISV, Constants.creattimes);
+        String order = c.dkorder(Constants.ZFBISV, Constants.SATA);
         this.zfborderno = order;
         Assertion.verifyTrue(zfborderno.length()>0, "支付宝代扣成功");
     }

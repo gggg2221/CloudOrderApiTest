@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zt.mybatis.dao.OrderMapper">
+
+    <select id="queryorder" parameterType="String" resultType="org.zt.mybatis.entity.Order">
+        select * from cs_biz_order where ORDER_NO = #{orderNo}
+    </select>
+
+    <!--查代扣订单-->
+    <select id="getdkorder" parameterType="String" resultType="org.zt.mybatis.entity.Order">
+        select ORDER_NO from cp_order_main where CAR_NO=#{carNo} and ORDER_STATUS=0 and CREATE_TIME>=#{createTime} LIMIT 1
+    </select>
+
+</mapper>

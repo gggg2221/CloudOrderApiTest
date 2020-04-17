@@ -21,12 +21,20 @@
                     <!--<include name="wxclose" />-->
                 <!--</methods>-->
             <!--</class>-->
-            <class name="cloud.sign.newsign.ZfbIsv">
+            <!--<class name="cloud.sign.newsign.ZfbIsv">-->
+                <!--<methods>-->
+
+                    <!--<include name="zfbisv" />-->
+                    <!--<include name="zfbsignerror" />-->
+                    <!--<include name="zfbclose" />-->
+                <!--</methods>-->
+            <!--</class>-->
+            <class name="cloud.sign.newsign.OtherIsv">
                 <methods>
 
-                    <include name="zfbisv" />
-                    <include name="zfbsignerror" />
-                    <include name="zfbclose" />
+                    <include name="otherisv" />
+                    <!--<include name="othersignerror" />-->
+                    <!--<include name="otherclose" />-->
                 </methods>
             </class>
             <!--老验签-->

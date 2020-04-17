@@ -3,6 +3,7 @@ package org.zt.common;
 
 public class Constants {
 
+
     private Constants(){}
 
     //获取项目路径
@@ -19,7 +20,9 @@ public class Constants {
     //云订单redisIp
     public static String REDISIP = "10.10.203.12";
     //车场密钥
-    public static String PARKSIG ="7c44531ec05af74c1bd8df3975e8011e";
+    public static String PARKSIG ="e0c8223b7ca64fa5bf4c0e2f97fd8811";
+    //世梁车场密钥
+//    public static String PARKSIG ="b4a2b0ee3e3e274542baea7f0dcec399";
 
     //sign topic
 //    public static final String SIGNTOPIC = "dc.sign.park.in";
@@ -47,20 +50,29 @@ public class Constants {
     //捷顺车牌：藏-JK1111
     public static String JIESHUN="藏-JK1111";
 
-    //车场code
+    //其他渠道车牌
+    public static String othercarno="藏-D12345";
+
+    //车场code 2018113019
     public static String PARKCODE="20181213001";
 
     //微信验签反查json
     public static String wxsigjson="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\""+ WXISV +"\",\"inTime\":\""+ SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
 
-    //支付吧验签反查
+    //支付宝验签反查
     public static String zfbsigjson="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\""+ ZFBISV +"\",\"inTime\":\""+ SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
 
+    //其他渠道验签反查
+    public static String sigjson="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\""+ othercarno +"\",\"inTime\":\""+ SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
+
     //微信代扣出场数据
-    public static String wxoutjson= "{\"isReal\":0,\"parkName\":\"梅test\",\"ysMoney\":0.01,\"yhMoney\":0.0,\"inEquipName\":\"车场入口\",\"outMode\":\"NORMAL\",\"outOperator\":\"Admin\",\"outEquipCode\":\"2\",\"ssMoney\":0.01,\"freeMoney\":0,\"dkTag\":1,\"orderNo\":\"\",\"outCarPhoto\":\"20181213001/NISSP_IMG_PARK_OUT/20181112/1\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"YELLOW\\\"}\",\"overTimeFlag\":0,\"idno\":\"01181016100552\",\"inRecordId\":\"" + ODERID + "\",\"payTypeName\":\"线上代扣\",\"carNumber\":\""+WXISV+"\",\"inTime\":\"" + SATA +"\",\"itemId\":\"" + ODERID + "\",\"outEquipName\":\"车场出口\",\"inEquipCode\":\"6\",\"parkCode\":\""+PARKCODE+"\",\"hgMoney\":0.0,\"outTime\":\"" + SATA + "\"}";
+    public static String wxoutjson= "{\"isReal\":0,\"parkName\":\"梅test\",\"ysMoney\":0.01,\"yhMoney\":0.00,\"inEquipName\":\"车场入口\",\"outMode\":\"NORMAL\",\"outOperator\":\"Admin\",\"outEquipCode\":\"2\",\"ssMoney\":0.01" +
+            ",\"freeMoney\":0,\"dkTag\":1,\"orderNo\":\"\",\"outCarPhoto\":\"2018113019/NISSP_IMG_PARK_OUT/20181112/1\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\",\"overTimeFlag\":0,\"idno\":\"01181016100552\",\"inRecordId\":\"" + ODERID + "\",\"payTypeName\":\"线上代扣\",\"carNumber\":\""+WXISV+"\",\"inTime\":\"" + SATA +"\",\"itemId\":\"" + ODERID + "\",\"outEquipName\":\"车场出口\",\"inEquipCode\":\"6\",\"parkCode\":\""+PARKCODE+"\",\"hgMoney\":0.0,\"outTime\":\"" + SATA + "\"}";
 
     //支付宝代扣出场数据
     public static String zfboutjson= "{\"isReal\":0,\"parkName\":\"梅test\",\"ysMoney\":0.01,\"yhMoney\":0.0,\"inEquipName\":\"车场入口\",\"outMode\":\"NORMAL\",\"outOperator\":\"Admin\",\"outEquipCode\":\"2\",\"ssMoney\":0.01,\"freeMoney\":0,\"dkTag\":1,\"orderNo\":\"\",\"outCarPhoto\":\"20181213001/NISSP_IMG_PARK_OUT/20181112/1\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\",\"overTimeFlag\":0,\"idno\":\"01181016100552\",\"inRecordId\":\"" + ODERID + "\",\"payTypeName\":\"线上代扣\",\"carNumber\":\""+ZFBISV+"\",\"inTime\":\"" + SATA + "\",\"itemId\":\"" + ODERID + "\",\"outEquipName\":\"车场出口\",\"inEquipCode\":\"6\",\"parkCode\":\""+PARKCODE+"\",\"hgMoney\":0.0,\"outTime\":\"" + SATA + "\"}";
 
+    //其他渠道代扣出场数据
+    public static String otheroutjson= "{\"isReal\":0,\"parkName\":\"梅test\",\"ysMoney\":0.01,\"yhMoney\":0.0,\"inEquipName\":\"车场入口\",\"outMode\":\"NORMAL\",\"outOperator\":\"Admin\",\"outEquipCode\":\"2\",\"ssMoney\":0.01,\"freeMoney\":0,\"dkTag\":1,\"orderNo\":\"\",\"outCarPhoto\":\"20181213001/NISSP_IMG_PARK_OUT/20181112/1\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\",\"overTimeFlag\":0,\"idno\":\"01181016100552\",\"inRecordId\":\"" + ODERID + "\",\"payTypeName\":\"线上代扣\",\"carNumber\":\""+othercarno+"\",\"inTime\":\"" + SATA + "\",\"itemId\":\"" + ODERID + "\",\"outEquipName\":\"车场出口\",\"inEquipCode\":\"6\",\"parkCode\":\""+PARKCODE+"\",\"hgMoney\":0.0,\"outTime\":\"" + SATA + "\"}";
 }
 

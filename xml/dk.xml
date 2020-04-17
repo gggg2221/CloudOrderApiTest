@@ -8,23 +8,40 @@
                     <include name="wxisv"/>
                 </methods>
             </class>
-            <!--<class name="cloud.order.dk.WxIsvDk">-->
-                <!--<methods>-->
-                    <!--<include name="wxisvdk"/>-->
-                    <!--&lt;!&ndash;<include name="wxrefund"/>&ndash;&gt;-->
-                <!--</methods>-->
-            <!--</class>-->
+            <class name="cloud.order.dk.WxIsvDk">
+                <methods>
+                    <include name="wxisvdk"/>
+                    <include name="wxrefund"/>
+                </methods>
+            </class>
         <!--<class name="cloud.sign.newsign.ZfbIsv">-->
             <!--<methods>-->
                 <!--<include name="zfbisv"/>-->
             <!--</methods>-->
         <!--</class>-->
+            <!--<class name="cloud.sign.oldsign.ZfbIsvo">-->
+                <!--<methods>-->
+                    <!--<include name="zfbisvoldsign"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+
         <!--<class name="cloud.order.dk.ZfbIsvDk">-->
             <!--<methods>-->
                 <!--<include name="zfbisvdk"/>-->
-                <!--&lt;!&ndash;<include name="zfbrefund"/>&ndash;&gt;-->
             <!--</methods>-->
         <!--</class>-->
+
+            <!--<class name="cloud.sign.newsign.OtherIsv">-->
+                <!--<methods>-->
+                    <!--<include name="otherisv"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="cloud.order.dk.OtherIsvDk">-->
+                <!--<methods>-->
+                    <!--<include name="otherisvdk"/>-->
+                    <!--<include name="otherrefund"/>-->
+                <!--</methods>-->
+            <!--</class>-->
 
             <!--<class name="cloud.sign.newsign.JieShun">-->
             <!--<methods>-->

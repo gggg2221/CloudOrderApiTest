@@ -25,9 +25,6 @@ public class JieShun extends AbstractTestNGSpringContextTests {
     String failsign="JSCSP:SIGN:CARSIGNRECORD_FAIL:CODE.INFO:藏-CK1111";
 
     @Autowired
-    Constants con;
-
-    @Autowired
     RedisTools redis;
 
     @Autowired
@@ -35,9 +32,9 @@ public class JieShun extends AbstractTestNGSpringContextTests {
 
     @Test(description = "捷顺验签及验签反查")
     public void jieshun(){
-        String requstjson ="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\"藏-JK1111\",\"inTime\":\""+ con.SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"GREEN\\\"}\"}]}}";
-        String sign= stringmd5(requstjson+con.PARKSIG);
-        String response= re.signapipost(con.SIGN_URL,requstjson,sign).asString();
+        String requstjson ="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\"藏-ZJS661\",\"inTime\":\""+ Constants.SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"GREEN\\\"}\"}]}}";
+        String sign= stringmd5(requstjson+Constants.PARKSIG);
+        String response= re.signapipost(Constants.SIGN_URL,requstjson,sign).asString();
         String signstatus = (Regxvalue.getSubUtilSimple(response, regx));
         int staus = Integer.valueOf(signstatus).intValue();
         Assertion.verifyTrue(staus==1 , "捷顺验签状态："+staus);
@@ -45,9 +42,9 @@ public class JieShun extends AbstractTestNGSpringContextTests {
 
     @Test(description = "捷顺验签签名失败")
     public void jssigerror(){
-        String requstjson ="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\"藏-JK1111\",\"inTime\":\""+con.SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"GREEN\\\"}\"}]}}";
+        String requstjson ="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\"藏-JK1111\",\"inTime\":\""+Constants.SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"GREEN\\\"}\"}]}}";
         String sign="pooiikjjkiioi1111";
-        String response= re.signapipost(con.SIGN_URL,requstjson,sign).asString();
+        String response= re.signapipost(Constants.SIGN_URL,requstjson,sign).asString();
         String rgx=".*\"result\":\"(.+?)\"";
         String signstatus = (Regxvalue.getSubUtilSimple(response, rgx));
         Assertion.verifyTrue(signstatus.equals("1"), "捷顺验签返回："+response);
@@ -55,9 +52,9 @@ public class JieShun extends AbstractTestNGSpringContextTests {
 
     @Test(description = "未开通捷顺代扣")
     public void jsclose(){
-        String requstjson ="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\"藏-CK1111\",\"inTime\":\""+con.SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
-        String sign= stringmd5(requstjson+con.PARKSIG);
-        String response= re.signapipost(con.SIGN_URL,requstjson,sign).asString();
+        String requstjson ="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\"藏-CK1111\",\"inTime\":\""+Constants.SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
+        String sign= stringmd5(requstjson+Constants.PARKSIG);
+        String response= re.signapipost(Constants.SIGN_URL,requstjson,sign).asString();
         String signstatus = (Regxvalue.getSubUtilSimple(response, regx));
         int staus = Integer.valueOf(signstatus).intValue();
         Assertion.verifyTrue(staus!=1 , "捷顺验签状态："+staus);
@@ -67,8 +64,8 @@ public class JieShun extends AbstractTestNGSpringContextTests {
     public void sigyesterday() throws SQLException {
         String signatoryCode=".*\"signatoryCode\":(1021)";
         String requstjson =MysqlJdbc.postdata("cloudtestdata","signnew","jieshun","");
-        String sign= stringmd5(requstjson+con.PARKSIG);
-        String response= re.signapipost(con.SIGN_URL,requstjson,sign).asString();
+        String sign= stringmd5(requstjson+Constants.PARKSIG);
+        String response= re.signapipost(Constants.SIGN_URL,requstjson,sign).asString();
         String signCode = (Regxvalue.getSubUtilSimple(response, signatoryCode));
         int staus = Integer.valueOf(signCode).intValue();
         Assertion.verifyTrue(staus==1021 , "捷顺验签状态："+staus);

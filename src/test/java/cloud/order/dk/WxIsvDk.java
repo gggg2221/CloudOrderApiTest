@@ -43,9 +43,10 @@ public class WxIsvDk extends AbstractTestNGSpringContextTests {
     public void wxisvdk() throws InterruptedException {
         //发送出场数据到kafka
         kf.produce(Constants.DKTOPIC, Constants.wxoutjson);
-        Thread.sleep(2000);
         //查询dk订单是否成功
-        String order = c.dkorder(Constants.wxcar, Constants.SATA);
+        String order =c.dkorder(Constants.wxcar, Constants.SATA);
+//        for(;order==null;){}
+
         System.out.println("+++++++++++++++++++++++++++++++++++"+order);
         this.wxorderno = order;
         Assertion.verifyTrue(wxorderno.length()>0, "微信代扣成功");

@@ -26,10 +26,13 @@ public class SignPub {
             case "wxisv":
                 this.requstjson = Constants.wxsigjson;
 
-                break; //可选
+                break;
             case "zfbisv":
                 this.requstjson = Constants.zfbsigjson;
-                break; //可选
+                break;
+            default :
+                this.requstjson = Constants.sigjson;
+                break;
         }
 
         String sign = stringmd5(requstjson + Constants.PARKSIG);

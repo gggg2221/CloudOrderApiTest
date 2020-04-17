@@ -20,17 +20,14 @@ public class ZfbIsvo extends AbstractTestNGSpringContextTests {
     String regx=".*\"is_signatory\":(.+?)";
 
     @Autowired
-    Constants con;
-
-    @Autowired
     ApiRequst re;
 
     @Test(description = "支付宝车主平台老验签")
     public void zfbisvoldsign() throws SQLException {
         String requstjson =MysqlJdbc.postdata("cloudtestdata","signold","zfbisvoldsign","");
         //获取验签反查密钥
-        String sign= stringmd5(requstjson+con.PARKSIG);
-        String response= re.signapipost(con.OLDSIGN_URL,requstjson,sign).asString();
+        String sign= stringmd5(requstjson+Constants.PARKSIG);
+        String response= re.signapipost(Constants.OLDSIGN_URL,requstjson,sign).asString();
         String signstatus = (Regxvalue.getSubUtilSimple(response, regx));
         int staus = Integer.valueOf(signstatus).intValue();
         Assertion.verifyTrue(staus==1 , "支付宝车主验签状态："+staus);
