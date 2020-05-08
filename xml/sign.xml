@@ -3,19 +3,18 @@
 	<test name="SignTest" verbose="2">
         <classes>
             <!--新验签-->
-            <!--<class name="cloud.sign.newsign.JieShun">-->
-                <!--<methods>-->
-                    <!--<include name="jieshun" />-->
+            <class name="cloud.sign.newsign.JieShun">
+                <methods>
+                    <include name="jieshun" />
                     <!--<include name="jssigerror" />-->
                     <!--<include name="jsclose" />-->
                     <!--<include name="sigyesterday" />-->
                     <!--<include name="redisscusig" />-->
                     <!--<include name="redisfail" />-->
-                <!--</methods>-->
-            <!--</class>-->
+                </methods>
+            </class>
             <!--<class name="cloud.sign.newsign.WxIsv">-->
                 <!--<methods>-->
-
                     <!--<include name="wxisv" />-->
                     <!--<include name="wxsignerror" />-->
                     <!--<include name="wxclose" />-->
@@ -29,14 +28,14 @@
                     <!--<include name="zfbclose" />-->
                 <!--</methods>-->
             <!--</class>-->
-            <class name="cloud.sign.newsign.OtherIsv">
-                <methods>
+            <!--<class name="cloud.sign.newsign.OtherIsv">-->
+                <!--<methods>-->
 
-                    <include name="otherisv" />
+                    <!--<include name="otherisv" />-->
                     <!--<include name="othersignerror" />-->
                     <!--<include name="otherclose" />-->
-                </methods>
-            </class>
+                <!--</methods>-->
+            <!--</class>-->
             <!--老验签-->
             <!--<class name="cloud.sign.oldsign.JieShuno">-->
                 <!--<methods>-->

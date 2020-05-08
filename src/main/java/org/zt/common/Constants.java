@@ -45,13 +45,13 @@ public class Constants {
     public static String WXISV="藏-CS1111";
 
 //    public static String wxcar=" \""+"藏-CS1111"+"\" ";
-    public static String wxcar="藏-CS1111";
+    public static String wxcar="藏-Z12345";
 
     //捷顺车牌：藏-JK1111
-    public static String JIESHUN="藏-JK1111";
+    public static String JIESHUN="藏-JK2222";
 
-    //其他渠道车牌
-    public static String othercarno="藏-D12345";
+    //其他渠道车：深圳银联：藏-D12345 福州城市大脑：闽-A66666 招商车主平台
+    public static String othercarno="湘-C1FF87";
 
     //车场code 2018113019
     public static String PARKCODE="20181213001";

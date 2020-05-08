@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="6.689">
+           time="0.006">
   <properties />
   
   
-            <testcase name="zfbisvdk" time="6.689" classname="cloud.order.dk.ZfbIsvDk" />
+            <testcase name="zfbisvdk" time="0.006" classname="cloud.order.dk.ZfbIsvDk" />
       
 </testsuite>

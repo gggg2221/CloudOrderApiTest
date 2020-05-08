@@ -43,7 +43,7 @@ public class OrderController {
     //查询代扣订单
     @RequestMapping(value="/bno", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
     public String dkorder(String carNo,String createTime) throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(13000);
         Order or=orderService.getdkorder(carNo,createTime);
         System.out.println(or);
         String order=or.getOrderNo();

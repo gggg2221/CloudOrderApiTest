@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="springbootorder"
+<testsuite name="SignTest"
            tests="1"
-           failures="0"
+           failures="1"
            errors="0"
            skipped="0"
-           time="9.173">
+           time="2.942">
   <properties />
+            <testcase name="otherisv" time="2.942" classname="cloud.sign.newsign.OtherIsv">
+                <failure type="java.lang.Throwable"
+                  message="(null)"
+              >
+<![CDATA[java.lang.Throwable
+  message : 验签状态：0 expected [true] but found [false] in method : .otherisv(OtherIsv:36)
+  cloud.sign.newsign.OtherIsv.otherisv(OtherIsv.java:36)
+]]>
+      </failure>
+
+          </testcase>
   
   
-            <testcase name="otherisv" time="9.173" classname="cloud.sign.newsign.OtherIsv" />
-      
+  
 </testsuite>

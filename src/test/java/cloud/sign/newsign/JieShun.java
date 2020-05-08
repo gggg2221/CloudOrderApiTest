@@ -32,7 +32,7 @@ public class JieShun extends AbstractTestNGSpringContextTests {
 
     @Test(description = "捷顺验签及验签反查")
     public void jieshun(){
-        String requstjson ="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\"藏-ZJS661\",\"inTime\":\""+ Constants.SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"GREEN\\\"}\"}]}}";
+        String requstjson ="{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\"20181213001\",\"dataItems\":[{\"carNo\":\"藏-JK2222\",\"inTime\":\""+ Constants.SATA +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
         String sign= stringmd5(requstjson+Constants.PARKSIG);
         String response= re.signapipost(Constants.SIGN_URL,requstjson,sign).asString();
         String signstatus = (Regxvalue.getSubUtilSimple(response, regx));
