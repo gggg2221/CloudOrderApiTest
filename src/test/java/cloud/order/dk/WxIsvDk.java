@@ -46,6 +46,7 @@ public class WxIsvDk extends AbstractTestNGSpringContextTests {
         //查询dk订单是否成功
 //        String order =c.dkorder(Constants.wxcar, Constants.SATA);
         this.wxorderno = "order";
+        Thread.sleep(3000);
 //        Assertion.verifyTrue(wxorderno.length()>=0, "微信代扣成功");
         Assertion.verifyTrue(wxorderno!="", "微信代扣成功");
 

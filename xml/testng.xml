@@ -9,12 +9,16 @@
         <!--</groups>-->
         <classes>
             <!-- 验签 -->
-            <class name="cloud.sign.oldsign.JieShuno"></class>
-            <class name="cloud.sign.oldsign.ZfbIsvo"></class>
-            <class name="cloud.sign.oldsign.WxIsvo"></class>
+            <!--<class name="cloud.sign.oldsign.JieShuno"></class>-->
+            <!--<class name="cloud.sign.oldsign.ZfbIsvo"></class>-->
+            <!--<class name="cloud.sign.oldsign.WxIsvo"></class>-->
             <class name="cloud.sign.newsign.JieShun"></class>
             <class name="cloud.sign.newsign.ZfbIsv"></class>
             <class name="cloud.sign.newsign.WxIsv"></class>
+            <!-- 代扣 -->
+            <class name="cloud.order.dk.WxIsvDk"></class>
+            <class name="cloud.order.dk.ZfbIsvDk"></class>
+            <class name="cloud.order.dk.JieShunDk"></class>
             <!-- 订单列表查询 -->
             <class name="cloud.order.query.OrderList"></class>
             <!-- 订单反查 -->

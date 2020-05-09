@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="QueryOrderTest"
+           tests="4"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="14.497">
+  <properties />
+  
+  
+            <testcase name="orderlist2" time="3.584" classname="cloud.order.query.OrderList" />
+                <testcase name="orderlist1" time="3.580" classname="cloud.order.query.OrderList" />
+                <testcase name="orderlist3" time="3.596" classname="cloud.order.query.OrderList" />
+                <testcase name="orderlist0" time="3.737" classname="cloud.order.query.OrderList" />
+      
+</testsuite>

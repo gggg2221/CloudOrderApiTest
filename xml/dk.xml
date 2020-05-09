@@ -46,6 +46,10 @@
             <class name="cloud.sign.newsign.JieShun">
                 <methods>
                     <include name="jieshun"/>
+                    <include name="jssigerror" />
+                    <include name="jsclose" />
+                    <include name="redisscusig" />
+                    <include name="redisfail" />
                 </methods>
             </class>
             <class name="cloud.order.dk.JieShunDk">

@@ -23,15 +23,12 @@ public class OrderMainQurey extends AbstractTestNGSpringContextTests {
         String regx=".*\"transactionId\":\"(.+?)\"";
 
         @Autowired
-        Constants con;
-
-        @Autowired
         ApiRequst re;
 
         @Test(description = "订单主表查询")
         public void ordermainquery() throws SQLException {
             String requstjson = postdata("cloudtestdata","cloud_order","ordermainquery","");
-            String res = re.orderapipost(con.ORDER_URL, requstjson).asString();
+            String res = re.orderapipost(Constants.ORDER_URL, requstjson).asString();
             String transactionId = (Regxvalue.getSubUtilSimple(res, regx));
             if(!transactionId.equals("")) {
                 Assertion.verifyTrue(!transactionId.equals(""), "订单主表查询");

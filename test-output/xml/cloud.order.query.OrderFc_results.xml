@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="QueryOrderTest"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="4.564">
+  <properties />
+  
+  
+            <testcase name="orderfc" time="4.564" classname="cloud.order.query.OrderFc" />
+      
+</testsuite>

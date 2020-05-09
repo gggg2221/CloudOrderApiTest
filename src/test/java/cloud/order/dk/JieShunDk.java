@@ -35,6 +35,7 @@ public class JieShunDk extends AbstractTestNGSpringContextTests {
         //查询dk订单是否成功
 //        String order = c.dkorder(Constants.JIESHUN,Constants.SATA);
         this.jsorderno = "order";
+        Thread.sleep(3000);
 //        Assertion.verifyTrue(!order.equals(""), "代扣成功");
         Assertion.verifyTrue(jsorderno!="", "代扣成功");
     }

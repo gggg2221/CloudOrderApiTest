@@ -15,10 +15,7 @@ import static org.zt.common.MysqlJdbc.postdata;
 @Listeners({ AssertionListener.class })
 @SpringBootTest(classes = { ApplicationTest.class })
 public class OrderFc extends AbstractTestNGSpringContextTests {
-	String rgex = ".*\"orderNo\":\"(.+?)\"";
-
-	@Autowired
-    Constants con;
+	String rgex = ".*\"message\":\"(.+?)\"";
 
 	@Autowired
     ApiRequst re;
@@ -27,13 +24,9 @@ public class OrderFc extends AbstractTestNGSpringContextTests {
 	// 订单反查
 	public void orderfc() throws SQLException {
         String requstjson = postdata("cloudtestdata","cloud_order","orderfc","");
-		String res = re.orderapipost(con.ORDER_URL, requstjson).asString();
-		String order = (Regxvalue.getSubUtilSimple(res, rgex));
-		if (order != "") {
-			Assertion.verifyTrue(order != "", "查询成功");
-		} else {
-            Assertion.verifyTrue(false, "查询失败"+res);
-		}
+		String res = re.orderapipost(Constants.ORDER_URL, requstjson).asString();
+		String result = (Regxvalue.getSubUtilSimple(res, rgex));
+    	Assertion.verifyTrue(result.equals("成功"), "查询成功");
 
 	}
 
