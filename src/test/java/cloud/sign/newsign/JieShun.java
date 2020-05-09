@@ -60,7 +60,7 @@ public class JieShun extends AbstractTestNGSpringContextTests {
         Assertion.verifyTrue(staus!=1 , "捷顺验签状态："+staus);
     }
 
-    @Test(description = "反查超过一天的验签记录")
+    @Test(description = "反查超过一天的验签记录",enabled = false)
     public void sigyesterday() throws SQLException {
         String signatoryCode=".*\"signatoryCode\":(1021)";
         String requstjson =MysqlJdbc.postdata("cloudtestdata","signnew","jieshun","");
