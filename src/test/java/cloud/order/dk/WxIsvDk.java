@@ -52,7 +52,7 @@ public class WxIsvDk extends AbstractTestNGSpringContextTests {
 
     }
 
-    @Test(dependsOnMethods = {"wxisvdk"}, groups = "smoke", description = "微信退款")
+    @Test(dependsOnMethods = {"wxisvdk"}, groups = "smoke", description = "微信退款",enabled=false)
     public void wxrefund() {
         String message = refound.reforder(this.wxorderno);
         Assertion.verifyTrue(message.equals("成功"), "退款成功");

@@ -48,7 +48,7 @@ public class ZfbIsvDk extends AbstractTestNGSpringContextTests {
         Assertion.verifyTrue(zfborderno!="", "支付宝代扣成功");
     }
 
-    @Test(dependsOnMethods = {"zfbisvdk"}, groups = "smoke", description = "支付宝退款")
+    @Test(dependsOnMethods = {"zfbisvdk"}, groups = "smoke", description = "支付宝退款",enabled=false)
     public void zfbrefund() {
         String message = refound.reforder(zfborderno);
         Assertion.verifyTrue(message.equals("成功"), "退款成功");
