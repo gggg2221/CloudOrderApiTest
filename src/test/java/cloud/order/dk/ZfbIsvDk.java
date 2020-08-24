@@ -14,7 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.zt.mybatis.controller.OrderController;
 
 
 @Listeners({AssertionListener.class})
@@ -26,26 +25,17 @@ import org.zt.mybatis.controller.OrderController;
 public class ZfbIsvDk extends AbstractTestNGSpringContextTests {
 
     @Autowired
-    OrderController c;
-
-    @Autowired
-    KafkaTools kf;
-
+    DkPub dp;
     @Autowired
     Refound refound;
 
     private String zfborderno;
 
     @Test(groups = "smoke", description = "支付宝代扣")
-    public void zfbisvdk() throws InterruptedException {
-        //发送出场数据到kafka
-//        kf.produce(Constants.DKTOPIC, Constants.zfboutjson);
-        //查询dk订单是否成功
-//        String order = c.dkorder(Constants.ZFBISV, Constants.SATA);
-        this.zfborderno = "order";
-        Thread.sleep(6000);
-//        Assertion.verifyTrue(zfborderno.length()>=0, "支付宝代扣成功");
-        Assertion.verifyTrue(zfborderno!="", "支付宝代扣成功");
+    public void zfbisvdk() {
+
+        this.zfborderno =dp.channeldk(Constants.DKTOPIC,"zfbisv");
+        Assertion.verifyTrue(zfborderno.length()>=0, "支付宝代扣成功");
     }
 
     @Test(dependsOnMethods = {"zfbisvdk"}, groups = "smoke", description = "支付宝退款",enabled=false)

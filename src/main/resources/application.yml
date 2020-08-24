@@ -5,7 +5,8 @@ server:
 spring:
     datasource:
         name: test
-        url: jdbc:mysql://10.10.203.10:3306/ordercenter
+#        url: jdbc:mysql://10.10.203.10:3306/ordercenter
+        url: jdbc:mysql://10.10.203.10:3306/cloud-db
         username: test
         password: Jht123456
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -16,3 +17,13 @@ mybatis:
     configuration:
         log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
         lazy-loading-enabled: true
+
+cloud:
+    orderip: 10.10.203.19:8081
+    signip: 10.10.203.33:8185
+    oldsignip: 10.10.203.33:8085
+    SYXSIGNIP: syx.jslife.com.cn
+    order_url: /order-api-dispatcher/order/dispatcher
+    sign_url: /jscsp-signatory/serviceRequest/signatory
+    SYXSIGN_URL: /jscsp-sign/serviceRequest/signatory
+    OLDSIGN_URL: /jscsp-signatory/signatory.servlet

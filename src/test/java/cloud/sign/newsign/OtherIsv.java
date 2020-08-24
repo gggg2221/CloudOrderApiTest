@@ -8,6 +8,7 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
+import org.testng.log4testng.Logger;
 import org.zt.ApplicationTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -31,6 +32,7 @@ public class OtherIsv extends AbstractTestNGSpringContextTests {
 
     @Test(description = "其他渠道验签及验签反查")
     public void otherisv(){
+
         //获取验签反查密钥
         int status=sign.signnew("other");
         Assertion.verifyTrue(status==1 , "验签状态："+status);

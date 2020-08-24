@@ -14,11 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.zt.mybatis.controller.OrderController;
-import org.zt.mybatis.entity.Order;
-
-import java.util.Map;
-
 
 @Listeners({AssertionListener.class})
 @SpringBootTest(classes = {ApplicationTest.class})
@@ -29,27 +24,16 @@ import java.util.Map;
 public class WxIsvDk extends AbstractTestNGSpringContextTests {
 
     @Autowired
-    OrderController c;
-
-    @Autowired
-    KafkaTools kf;
-
-    @Autowired
     Refound refound;
+    @Autowired
+    DkPub dp;
 
     private String wxorderno;
 
     @Test(groups = "smoke", description = "微信代扣")
-    public void wxisvdk() throws InterruptedException {
-        //发送出场数据到kafka
-//        kf.produce(Constants.DKTOPIC, Constants.wxoutjson);
-        //查询dk订单是否成功
-//        String order =c.dkorder(Constants.wxcar, Constants.SATA);
-        this.wxorderno = "order";
-        Thread.sleep(3000);
-//        Assertion.verifyTrue(wxorderno.length()>=0, "微信代扣成功");
-        Assertion.verifyTrue(wxorderno!="", "微信代扣成功");
-
+    public void wxisvdk(){
+        this.wxorderno=dp.channeldk(Constants.DKTOPIC,"wxisv");
+        Assertion.verifyTrue(wxorderno.length()>=0, "微信代扣成功");
     }
 
     @Test(dependsOnMethods = {"wxisvdk"}, groups = "smoke", description = "微信退款",enabled=false)

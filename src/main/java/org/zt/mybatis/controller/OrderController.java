@@ -1,6 +1,5 @@
 package org.zt.mybatis.controller;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.zt.mybatis.entity.Order;
@@ -10,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping(value="/order")
@@ -24,27 +21,28 @@ public class OrderController {
     OrderServiceImpl orderService;
 
 
-    @RequestMapping(value="/byno", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
-    public Map<String,Object> byno(String carNo,String createTime) {
-        Map<String,Object> orderMap = new HashMap();
-        Order or = orderService.getdkorder(carNo ,createTime);
-        orderMap.put("order",or);
-        return orderMap;
+//    @RequestMapping(value="/byno", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
+//    public Map<String,Object> byno(String carNo,String createTime) {
+//        Map<String,Object> orderMap = new HashMap();
+//        Order or = orderService.getdkorder(carNo ,createTime);
+//        orderMap.put("order",or);
+//        return orderMap;
+//
+//    }
 
-    }
+//    @RequestMapping(value="/byo", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
+//    public String byo(String orderNo) {
+//        Order or = orderService.queryorder(orderNo);
+//        String dkorder=or.getOrderNo();
+//        return dkorder;
+//
+//    }
 
-    @RequestMapping(value="/byo", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
-    public String byo(String orderNo) {
-        Order or = orderService.queryorder(orderNo);
-        String dkorder=or.getOrderNo();
-        return dkorder;
-
-    }
     //查询代扣订单
     @RequestMapping(value="/bno", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.GET)
-    public String dkorder(String carNo,String createTime) throws InterruptedException {
-        Thread.sleep(13000);
-        Order or=orderService.getdkorder(carNo,createTime);
+    public String dkorder(String orderid) throws InterruptedException {
+        Thread.sleep(10000);
+        Order or=orderService.getdkorder(orderid);
         System.out.println(or);
         String order=or.getOrderNo();
         return order;

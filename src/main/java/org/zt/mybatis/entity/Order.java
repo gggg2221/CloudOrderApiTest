@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Order {
 
-    private String id;
+    private String ID;
 
 
     private String ORDER_NO;
@@ -46,12 +46,12 @@ public class Order {
 
 
     public String getId() {
-        return id;
+        return ID;
     }
 
 
     public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+        this.ID = id == null ? null : id.trim();
     }
 
 

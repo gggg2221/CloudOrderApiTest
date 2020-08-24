@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.001">
+           time="0.215">
   <properties />
   
   
-            <testcase name="wxisvdk" time="0.001" classname="cloud.order.dk.WxIsvDk" />
+            <testcase name="wxisvdk" time="0.215" classname="cloud.order.dk.WxIsvDk" />
       
 </testsuite>

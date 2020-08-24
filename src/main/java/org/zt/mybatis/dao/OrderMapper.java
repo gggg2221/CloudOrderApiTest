@@ -7,6 +7,7 @@ public interface OrderMapper {
 
     Order queryorder(String orderNo);
 
-    Order getdkorder(@Param("carNo") String carNo, @Param("createTime") String createTime);
+//    Order getdkorder(@Param("carNo") String carNo, @Param("orderid") String createTime);
+    Order getdkorder(@Param("orderid") String orderid);
 
 }

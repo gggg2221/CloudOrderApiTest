@@ -1,20 +1,24 @@
 package org.zt.common;
 
 import java.util.Properties;
-import org.apache.log4j.Logger;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component
-public class KafkaTools{
+public class KafkaTools {
 
     private final KafkaProducer<String, String> producer;
+    String ip = "10.10.203.201:9092,10.10.203.202:9092,10.10.203.203:9092";
+    String ip1 = "10.10.204.185:9092,10.10.204.186:9092,10.10.204.42:9092";
 
-    public KafkaTools() {
+
+    public KafkaTools(){
+
+        System.out.println("测试是否重复调用");
+
         Properties props = new Properties();
-        props.put("bootstrap.servers", "10.10.203.201:9092,10.10.203.202:9092,10.10.203.203:9092");//xxx服务器ip
+        props.put("bootstrap.servers", ip);//xxx服务器ip
         props.put("acks", "all");//所有follower都响应了才认为消息提交成功，即"committed"
         props.put("retries", 0);//retries = MAX 无限重试，直到你意识到出现了问题:)
         props.put("batch.size", 16384);//producer将试图批处理消息记录，以减少请求次数.默认的批量处理消息字节数
@@ -30,21 +34,24 @@ public class KafkaTools{
     }
 
     //write data
-    public void produce(String topic ,String json){
+    public void produce(String topic, String json) {
 
-           producer.send(new ProducerRecord<String, String>(topic, json));
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+            producer.send(new ProducerRecord<String, String>(topic, json));
+
+//        try {
+//
+//
+//            Thread.sleep(2000);
+//        }
+//         catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
     }
-
     //close con
     public void produceclose() {
-
         producer.close();
+
     }
 
 }

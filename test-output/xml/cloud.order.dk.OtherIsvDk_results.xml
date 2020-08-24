@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="8.208">
+           time="12.148">
   <properties />
-            <testcase name="otherisvdk" time="8.208" classname="cloud.order.dk.OtherIsvDk">
+            <testcase name="otherisvdk" time="12.148" classname="cloud.order.dk.OtherIsvDk">
                 <failure type="java.lang.NullPointerException"
                   message="(null)"
               >

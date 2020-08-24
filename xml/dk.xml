@@ -3,33 +3,38 @@
     <test name="springbootorder" verbose="5">
         <classes>
             <!--新验签-->
-            <class name="cloud.sign.newsign.WxIsv">
-                <methods>
-                    <include name="wxisv"/>
-                </methods>
-            </class>
+            <!--<class name="cloud.sign.newsign.WxIsv">-->
+                <!--<methods>-->
+                    <!--<include name="wxisv"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="cloud.sign.oldsign.WxIsvo">-->
+                <!--<methods>-->
+                    <!--<include name="wxisvoldsign"/>-->
+                <!--</methods>-->
+            <!--</class>-->
             <class name="cloud.order.dk.WxIsvDk">
                 <methods>
                     <include name="wxisvdk"/>
                     <!--<include name="wxrefund"/>-->
                 </methods>
             </class>
-        <class name="cloud.sign.newsign.ZfbIsv">
-            <methods>
-                <include name="zfbisv"/>
-            </methods>
-        </class>
+        <!--<class name="cloud.sign.newsign.ZfbIsv">-->
+            <!--<methods>-->
+                <!--<include name="zfbisv"/>-->
+            <!--</methods>-->
+        <!--</class>-->
             <!--<class name="cloud.sign.oldsign.ZfbIsvo">-->
                 <!--<methods>-->
                     <!--<include name="zfbisvoldsign"/>-->
                 <!--</methods>-->
             <!--</class>-->
 
-        <class name="cloud.order.dk.ZfbIsvDk">
-            <methods>
-                <include name="zfbisvdk"/>
-            </methods>
-        </class>
+        <!--<class name="cloud.order.dk.ZfbIsvDk">-->
+            <!--<methods>-->
+                <!--<include name="zfbisvdk"/>-->
+            <!--</methods>-->
+        <!--</class>-->
 
             <!--<class name="cloud.sign.newsign.OtherIsv">-->
                 <!--<methods>-->
@@ -39,24 +44,24 @@
             <!--<class name="cloud.order.dk.OtherIsvDk">-->
                 <!--<methods>-->
                     <!--<include name="otherisvdk"/>-->
-                    <!--<include name="otherrefund"/>-->
+                    <!--&lt;!&ndash;<include name="otherrefund"/>&ndash;&gt;-->
                 <!--</methods>-->
             <!--</class>-->
 
-            <class name="cloud.sign.newsign.JieShun">
-                <methods>
-                    <include name="jieshun"/>
-                    <include name="jssigerror" />
-                    <include name="jsclose" />
-                    <include name="redisscusig" />
-                    <include name="redisfail" />
-                </methods>
-            </class>
-            <class name="cloud.order.dk.JieShunDk">
-                <methods>
-                    <include name="jieshundk"/>
-                </methods>
-            </class>
+            <!--<class name="cloud.sign.newsign.JieShun">-->
+                <!--<methods>-->
+                    <!--<include name="jieshun"/>-->
+                    <!--<include name="jssigerror" />-->
+                    <!--<include name="jsclose" />-->
+                    <!--<include name="redisscusig" />-->
+                    <!--<include name="redisfail" />-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="cloud.order.dk.JieShunDk">-->
+                <!--<methods>-->
+                    <!--<include name="jieshundk"/>-->
+                <!--</methods>-->
+            <!--</class>-->
 
         </classes>
     </test>

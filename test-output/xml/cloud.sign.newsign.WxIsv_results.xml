@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="2.948">
+           time="5.560">
   <properties />
   
   
-            <testcase name="wxisv" time="2.948" classname="cloud.sign.newsign.WxIsv" />
+            <testcase name="wxisv" time="5.560" classname="cloud.sign.newsign.WxIsv" />
       
 </testsuite>
