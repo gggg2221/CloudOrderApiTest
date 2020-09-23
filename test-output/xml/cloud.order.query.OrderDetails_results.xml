@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="3.727">
+           time="3.057">
   <properties />
   
   
-            <testcase name="orderdetails" time="3.727" classname="cloud.order.query.OrderDetails" />
+            <testcase name="orderdetails" time="3.057" classname="cloud.order.query.OrderDetails" />
       
 </testsuite>

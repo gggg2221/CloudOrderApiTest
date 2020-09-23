@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="springbootorder"
+<testsuite name="SignTest"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="3.915">
+           time="4.467">
   <properties />
   
   
-            <testcase name="zfbisv" time="3.915" classname="cloud.sign.newsign.ZfbIsv" />
+            <testcase name="zfbisv" time="4.467" classname="cloud.sign.newsign.ZfbIsv" />
       
 </testsuite>

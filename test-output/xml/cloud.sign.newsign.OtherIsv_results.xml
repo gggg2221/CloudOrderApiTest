@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="2.093">
+           time="5.720">
   <properties />
-            <testcase name="otherisv" time="2.093" classname="cloud.sign.newsign.OtherIsv">
+            <testcase name="otherisv" time="5.720" classname="cloud.sign.newsign.OtherIsv">
                 <failure type="java.lang.Throwable"
                   message="(null)"
               >

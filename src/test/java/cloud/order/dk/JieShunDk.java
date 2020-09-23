@@ -18,11 +18,13 @@ public class JieShunDk extends AbstractTestNGSpringContextTests {
 
     @Autowired
     DkPub dp;
+    @Autowired
+    Parameters pt;
 
     private String jsorderno;
     @Test(groups = "smoke", description = "捷顺代扣")
     public void jieshundk(){
-        this.jsorderno = dp.channeldk(Constants.DKTOPIC,"jsdk");
+        this.jsorderno = dp.channeldk(pt.getDktopic(),"jsdk");
         Assertion.verifyTrue(jsorderno.length()>=0, "微信代扣成功");
     }
 }

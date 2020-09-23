@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="4.564">
+           time="3.067">
   <properties />
   
   
-            <testcase name="orderfc" time="4.564" classname="cloud.order.query.OrderFc" />
+            <testcase name="orderfc" time="3.067" classname="cloud.order.query.OrderFc" />
       
 </testsuite>

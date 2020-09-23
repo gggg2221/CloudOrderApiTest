@@ -27,12 +27,14 @@ public class WxIsvDk extends AbstractTestNGSpringContextTests {
     Refound refound;
     @Autowired
     DkPub dp;
+    @Autowired
+    Parameters pt;
 
     private String wxorderno;
 
     @Test(groups = "smoke", description = "微信代扣")
     public void wxisvdk(){
-        this.wxorderno=dp.channeldk(Constants.DKTOPIC,"wxisv");
+        this.wxorderno=dp.channeldk(pt.getDktopic(),"wxisv");
         Assertion.verifyTrue(wxorderno.length()>=0, "微信代扣成功");
     }
 

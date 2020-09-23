@@ -4,15 +4,16 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="12.148">
+           time="13.961">
   <properties />
-            <testcase name="otherisvdk" time="12.148" classname="cloud.order.dk.OtherIsvDk">
+            <testcase name="otherisvdk" time="13.961" classname="cloud.order.dk.OtherIsvDk">
                 <failure type="java.lang.NullPointerException"
                   message="(null)"
               >
 <![CDATA[java.lang.NullPointerException
-  org.zt.mybatis.controller.OrderController.dkorder(OrderController.java:49)
-  cloud.order.dk.OtherIsvDk.otherisvdk(OtherIsvDk.java:44)
+  org.zt.mybatis.controller.OrderController.dkorder(OrderController.java:47)
+  org.zt.common.DkPub.channeldk(DkPub.java:48)
+  cloud.order.dk.OtherIsvDk.otherisvdk(OtherIsvDk.java:40)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

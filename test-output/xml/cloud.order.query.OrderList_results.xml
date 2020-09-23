@@ -4,13 +4,13 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="14.497">
+           time="12.110">
   <properties />
   
   
-            <testcase name="orderlist2" time="3.584" classname="cloud.order.query.OrderList" />
-                <testcase name="orderlist1" time="3.580" classname="cloud.order.query.OrderList" />
-                <testcase name="orderlist3" time="3.596" classname="cloud.order.query.OrderList" />
-                <testcase name="orderlist0" time="3.737" classname="cloud.order.query.OrderList" />
+            <testcase name="orderlist0" time="3.039" classname="cloud.order.query.OrderList" />
+                <testcase name="orderlist1" time="3.013" classname="cloud.order.query.OrderList" />
+                <testcase name="orderlist3" time="3.040" classname="cloud.order.query.OrderList" />
+                <testcase name="orderlist2" time="3.018" classname="cloud.order.query.OrderList" />
       
 </testsuite>

@@ -24,12 +24,12 @@ public class MakeMonOrder extends AbstractTestNGSpringContextTests {
     RedisTools redis;
 
     @Autowired
-    Constants con;
+    Parameters pt;
 
     @Test(groups = "smoke",description = "生成月卡订单")
     public void makemonorder() throws SQLException {
         String requstjson = postdata("cloudtestdata","cloud_order", "makemonorder", "");
-        String res = re.orderapipost(con.ORDER_URL, requstjson).asString();
+        String res = re.orderapipost(pt.getOrderurl(), requstjson).asString();
         String order = Regxvalue.getSubUtilSimple(res, regs);
         if (!order.equals("")) {
             String source= redis.reddata(order,"");

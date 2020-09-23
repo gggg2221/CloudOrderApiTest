@@ -20,6 +20,9 @@ public class WxIsvo extends AbstractTestNGSpringContextTests {
     String regx=".*\"is_signatory\":(.+?)";
 
     @Autowired
+    Parameters pt;
+
+    @Autowired
     ApiRequst re;
 
     @Test(description = "微信车主平台老验签")
@@ -27,8 +30,8 @@ public class WxIsvo extends AbstractTestNGSpringContextTests {
         //取出json数据
         String requstjson=MysqlJdbc.postdata("cloudtestdata","signold","wxisvoldsign","");
         //获取验签反查密钥
-        String sign= stringmd5(requstjson+Constants.PARKSIG);
-        String response= re.signapipost(Constants.OLDSIGN_URL,requstjson,sign).asString();
+        String sign= stringmd5(requstjson+pt.getParksign());
+        String response= re.signapipost(pt.getOldsignurl(),requstjson,sign).asString();
         String signstatus = (Regxvalue.getSubUtilSimple(response, regx));
         int staus = Integer.valueOf(signstatus).intValue();
         Assertion.verifyTrue(staus==1 , "微信车主验签状态："+staus);

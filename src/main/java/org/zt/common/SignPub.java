@@ -12,36 +12,37 @@ public class SignPub {
     @Autowired
     ApiRequst re;
 
+    @Autowired
+    Parameters pt;
+
     //验签状态
     String regx = ".*\"isSignatory\":(.+?)";
-
-    //验签结果
-    String rgx = ".*\"result\":\"(.+?)\"";
 
     private static final Logger logger = Logger.getLogger(SignPub.class);
 
     //验签数据
     private String requstjson;
     private int status;
+    private String intime= MyUntils.intime;
 
     public int signnew(String sigchannel) {
 
         switch (sigchannel) {
             case "wxisv":
-                this.requstjson = Constants.wxsigjson;
+                this.requstjson = "{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\""+pt.getParkcode()+"\",\"dataItems\":[{\"carNo\":\""+ pt.getWxisv() +"\",\"inTime\":\""+ intime +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
                 break;
             case "zfbisv":
-                this.requstjson = Constants.zfbsigjson;
+                this.requstjson = "{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\""+pt.getParkcode()+"\",\"dataItems\":[{\"carNo\":\""+ pt.getZfbisv() +"\",\"inTime\":\""+ intime +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"BLUE\\\"}\"}]}}";
                 break;
             default:
-                this.requstjson = Constants.sigjson;
+                this.requstjson = "{\"serviceId\":\"fc.park.signatoryResult.OrderQuery\",\"data\":{\"parkCode\":\""+pt.getParkcode()+"\",\"dataItems\":[{\"carNo\":\""+ pt.getOtherisv() +"\",\"inTime\":\""+ intime +"\",\"vehicleInfo\":\"{\\\"plateColor\\\":\\\"YELLOW\\\"}\"}]}}";
                 break;
         }
 
         try {
-            String sign = stringmd5(requstjson + Constants.PARKSIG);
-            String response = re.signapipost(Constants.SIGN_URL, requstjson, sign).asString();
-            logger.debug(response + "------:返回验签结果！");
+            String sign = stringmd5(requstjson + pt.getParksign());
+            String response = re.signapipost(pt.getSignurl(), requstjson, sign).asString();
+            logger.debug(response + ":【返回验签结果！】");
             String signstatus = (Regxvalue.getSubUtilSimple(response, regx));
             status = Integer.valueOf(signstatus).intValue();
 

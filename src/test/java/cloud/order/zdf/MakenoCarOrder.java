@@ -18,7 +18,7 @@ public class MakenoCarOrder extends AbstractTestNGSpringContextTests {
     String regs="\"orderNo\":\"(.+?)\"";
 
     @Autowired
-    Constants con;
+    Parameters pt;
 
     @Autowired
     RedisTools redis;
@@ -29,7 +29,7 @@ public class MakenoCarOrder extends AbstractTestNGSpringContextTests {
     @Test(enabled = false,groups = "smoke",description = "新无牌车扫码生成订单")
     public void makenocarorder() throws SQLException {
         String requstjson = postdata("cloudtestdata","cloud_order", "makenocarorder", "");
-        String res = re.orderapipost(con.ORDER_URL, requstjson).asString();
+        String res = re.orderapipost(pt.getOrderurl(), requstjson).asString();
         String order = Regxvalue.getSubUtilSimple(res, regs);
         if (!order.equals("")) {
             String source= redis.reddata(order,"");

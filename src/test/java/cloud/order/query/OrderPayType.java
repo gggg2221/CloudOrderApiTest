@@ -4,16 +4,11 @@ import java.sql.SQLException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.zt.ApplicationTest;
-import org.zt.common.AssertionListener;
+import org.zt.common.*;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-import org.zt.common.ApiRequst;
-import org.zt.common.Assertion;
-import org.zt.common.Constants;
-import org.zt.common.Regxvalue;
 
 import static org.zt.common.MysqlJdbc.postdata;
 
@@ -26,11 +21,14 @@ public class OrderPayType extends AbstractTestNGSpringContextTests {
 	@Autowired
     ApiRequst re;
 
+    @Autowired
+    Parameters pt;
+
 	@Test(description = "订单可用支付方式查询")
 	// 订单可用支付方式查询
 	public void orderpaytype() throws SQLException {
         String requstjson = postdata("cloudtestdata","cloud_order","orderpaytype","");
-		String res = re.orderapipost(Constants.ORDER_URL, requstjson).asString();
+		String res = re.orderapipost(pt.getOrderurl(), requstjson).asString();
 		String pytype = (Regxvalue.getSubUtilSimple(res, rgex));
 		if (!pytype.equals("")) {
 			Assertion.verifyTrue(!pytype.equals(""), "查询支付方式成功:");

@@ -28,13 +28,15 @@ public class ZfbIsvDk extends AbstractTestNGSpringContextTests {
     DkPub dp;
     @Autowired
     Refound refound;
+    @Autowired
+    Parameters pt;
 
     private String zfborderno;
 
     @Test(groups = "smoke", description = "支付宝代扣")
     public void zfbisvdk() {
 
-        this.zfborderno =dp.channeldk(Constants.DKTOPIC,"zfbisv");
+        this.zfborderno =dp.channeldk(pt.getDktopic(),"zfbisv");
         Assertion.verifyTrue(zfborderno.length()>=0, "支付宝代扣成功");
     }
 

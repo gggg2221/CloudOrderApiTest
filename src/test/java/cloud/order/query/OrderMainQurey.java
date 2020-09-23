@@ -2,11 +2,7 @@ package cloud.order.query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.zt.ApplicationTest;
-import org.zt.common.ApiRequst;
-import org.zt.common.Assertion;
-import org.zt.common.Constants;
-import org.zt.common.Regxvalue;
-import org.zt.common.AssertionListener;
+import org.zt.common.*;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Listeners;
@@ -25,10 +21,13 @@ public class OrderMainQurey extends AbstractTestNGSpringContextTests {
         @Autowired
         ApiRequst re;
 
+        @Autowired
+        Parameters pt;
+
         @Test(description = "订单主表查询")
         public void ordermainquery() throws SQLException {
             String requstjson = postdata("cloudtestdata","cloud_order","ordermainquery","");
-            String res = re.orderapipost(Constants.ORDER_URL, requstjson).asString();
+            String res = re.orderapipost(pt.getOrderurl(), requstjson).asString();
             String transactionId = (Regxvalue.getSubUtilSimple(res, regx));
             if(!transactionId.equals("")) {
                 Assertion.verifyTrue(!transactionId.equals(""), "订单主表查询");

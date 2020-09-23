@@ -30,11 +30,14 @@ public class OtherIsvDk extends AbstractTestNGSpringContextTests {
     @Autowired
     Refound refound;
 
+    @Autowired
+    Parameters pt;
+
     private String otherorderno;
 
     @Test(groups = "smoke", description = "其他代扣")
     public void otherisvdk(){
-        this.otherorderno =dp.channeldk(Constants.DKTOPIC,"otherchannel");
+        this.otherorderno =dp.channeldk(pt.getDktopic(),"otherchannel");
         Assertion.verifyTrue(otherorderno.length()>0, "代扣成功");
     }
 }

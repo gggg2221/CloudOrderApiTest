@@ -3,19 +3,20 @@ package org.zt.common;
 import java.util.Properties;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class KafkaTools {
 
-    private final KafkaProducer<String, String> producer;
-    String ip = "10.10.203.201:9092,10.10.203.202:9092,10.10.203.203:9092";
-    String ip1 = "10.10.204.185:9092,10.10.204.186:9092,10.10.204.42:9092";
+    @Autowired
+    Parameters pt;
 
+    private final KafkaProducer<String, String> producer;
+    String ip="10.10.203.201:9092,10.10.203.202:9092,10.10.203.203:9092";
+    String ycip="10.10.204.185:9092,10.10.204.186:9092,10.10.204.42:9092";
 
     public KafkaTools(){
-
-        System.out.println("测试是否重复调用");
 
         Properties props = new Properties();
         props.put("bootstrap.servers", ip);//xxx服务器ip

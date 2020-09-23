@@ -12,29 +12,27 @@
                     <!--<include name="redisfail" />-->
                 <!--</methods>-->
             <!--</class>-->
-            <!--<class name="cloud.sign.newsign.WxIsv">-->
-                <!--<methods>-->
-                    <!--<include name="wxisv" />-->
-                    <!--&lt;!&ndash;<include name="wxsignerror" />&ndash;&gt;-->
-                    <!--&lt;!&ndash;<include name="wxclose" />&ndash;&gt;-->
-                <!--</methods>-->
-            <!--</class>-->
-            <!--<class name="cloud.sign.newsign.ZfbIsv">-->
-                <!--<methods>-->
-
-                    <!--<include name="zfbisv" />-->
-                    <!--<include name="zfbsignerror" />-->
-                    <!--<include name="zfbclose" />-->
-                <!--</methods>-->
-            <!--</class>-->
-            <class name="cloud.sign.newsign.OtherIsv">
+            <class name="cloud.sign.newsign.WxIsv">
                 <methods>
-
-                    <include name="otherisv" />
-                    <!--<include name="othersignerror" />-->
-                    <!--<include name="otherclose" />-->
+                    <include name="wxisv" />
+                    <!--<include name="wxsignerror" />-->
+                    <!--<include name="wxclose" />-->
                 </methods>
             </class>
+            <!--<class name="cloud.sign.newsign.ZfbIsv">-->
+                <!--<methods>-->
+                    <!--<include name="zfbisv" />-->
+                    <!--&lt;!&ndash;<include name="zfbsignerror" />&ndash;&gt;-->
+                    <!--&lt;!&ndash;<include name="zfbclose" />&ndash;&gt;-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="cloud.sign.newsign.OtherIsv">-->
+                <!--<methods>-->
+                    <!--<include name="otherisv" />-->
+                    <!--&lt;!&ndash;<include name="othersignerror" />&ndash;&gt;-->
+                    <!--&lt;!&ndash;<include name="otherclose" />&ndash;&gt;-->
+                <!--</methods>-->
+            <!--</class>-->
             <!--老验签-->
             <!--<class name="cloud.sign.oldsign.JieShuno">-->
                 <!--<methods>-->

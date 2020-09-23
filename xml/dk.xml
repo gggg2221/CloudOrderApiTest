@@ -3,11 +3,11 @@
     <test name="springbootorder" verbose="5">
         <classes>
             <!--新验签-->
-            <!--<class name="cloud.sign.newsign.WxIsv">-->
-                <!--<methods>-->
-                    <!--<include name="wxisv"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+            <class name="cloud.sign.newsign.WxIsv">
+                <methods>
+                    <include name="wxisv"/>
+                </methods>
+            </class>
             <!--<class name="cloud.sign.oldsign.WxIsvo">-->
                 <!--<methods>-->
                     <!--<include name="wxisvoldsign"/>-->

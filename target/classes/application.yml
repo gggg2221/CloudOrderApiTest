@@ -1,11 +1,12 @@
 server:
-    port: 8181
+    port: 8188
 
 #Mybatis config
 spring:
     datasource:
         name: test
-        url: jdbc:mysql://10.10.203.10:3306/ordercenter
+#        url: jdbc:mysql://10.10.203.10:3306/ordercenter
+        url: jdbc:mysql://10.10.203.10:3306/cloud-db
         username: test
         password: Jht123456
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -16,3 +17,21 @@ mybatis:
     configuration:
         log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
         lazy-loading-enabled: true
+
+cloud:
+    orderurl: http://10.10.203.19:8081/order-api-dispatcher/order/dispatcher
+    signurl: http://10.10.203.33:8185/jscsp-signatory/serviceRequest/signatory
+#    signurl: http://10.10.203.115:8880/serviceRequest/signatory  #本地化验签
+#    syxsignurl: http://syx.jslife.com.cn/jscsp-sign/serviceRequest/signatory
+    oldsignurl: http://10.10.203.33:8085/jscsp-signatory/signatory.servlet
+    parksign: f51dbc268465432389039bd13083190d #f51dbc268465432389039bd13083190d #a413a0614997409cba4e109320d41b5c #f8e7fafcae7440d499690cd0e1441a45
+    parkcode: 2019120311 #2019120311 #20181213001 #p191115310
+    dktopic: dc.dk.park.out
+    orderid: ${random.value}
+    zfbisv: 藏-ZFB999
+    wxisv: 藏-CS1111
+    #农行isv:藏-W7TR66 深圳银联:藏-D12345 福州城市大脑:闽-A66666 招商车主平台:蒙-BJS000 东莞通:粤-SR1111 天府通:川-Q11111 川-134566 小桔租车:藏-ZJSGGG1 GREEN 建行isv:藏-K78789
+    otherisv: 藏-W7TR66
+    redisip: 10.10.203.12
+    #压测kafka：10.10.204.185:9092,10.10.204.186:9092,10.10.204.42:9092
+    kafkaip: 10.10.203.201:9092,10.10.203.202:9092,10.10.203.203:9092

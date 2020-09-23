@@ -1,6 +1,5 @@
 package cloud.sign.oldsign;
 
-import com.google.protobuf.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.zt.ApplicationTest;
 import org.zt.common.*;
@@ -22,7 +21,7 @@ public class JieShuno extends AbstractTestNGSpringContextTests {
     String regx=".*\"is_signatory\":(.+?)";
 
     @Autowired
-    Constants con;
+    Parameters pt;
 
     @Autowired
     ApiRequst re;
@@ -30,8 +29,8 @@ public class JieShuno extends AbstractTestNGSpringContextTests {
     @Test(description = "捷顺老验签")
     public void jssignold() throws SQLException {
         String requstjson=MysqlJdbc.postdata("cloudtestdata","signold","jssignold","");
-        String sign= stringmd5(requstjson+con.PARKSIG);
-        String response= re.signapipost(con.OLDSIGN_URL,requstjson,sign).asString();
+        String sign= stringmd5(requstjson+pt.getParksign());
+        String response= re.signapipost(pt.getOldsignurl(),requstjson,sign).asString();
         String signstatus = (Regxvalue.getSubUtilSimple(response, regx));
         int staus = Integer.valueOf(signstatus).intValue();
         Assertion.verifyTrue(staus==1 , "捷顺验签状态："+staus);

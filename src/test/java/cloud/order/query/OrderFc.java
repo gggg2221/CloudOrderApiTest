@@ -19,12 +19,14 @@ public class OrderFc extends AbstractTestNGSpringContextTests {
 
 	@Autowired
     ApiRequst re;
+	@Autowired
+    Parameters pt;
 
 	@Test(description = "订单反查")
 	// 订单反查
 	public void orderfc() throws SQLException {
         String requstjson = postdata("cloudtestdata","cloud_order","orderfc","");
-		String res = re.orderapipost(Constants.ORDER_URL, requstjson).asString();
+		String res = re.orderapipost(pt.getOrderurl(), requstjson).asString();
 		String result = (Regxvalue.getSubUtilSimple(res, rgex));
     	Assertion.verifyTrue(result.equals("成功"), "查询成功");
 

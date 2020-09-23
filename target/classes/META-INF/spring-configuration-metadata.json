@@ -1,0 +1,77 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud",
+      "type": "org.zt.common.Parameters"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.dktopic",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.kafkaip",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.oldsignurl",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.orderid",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.orderurl",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.otherisv",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.parkcode",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.parksign",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.redisip",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.signurl",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.syxsignurl",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.wxisv",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.zt.common.Parameters",
+      "name": "cloud.zfbisv",
+      "type": "java.lang.String"
+    }
+  ]
+}

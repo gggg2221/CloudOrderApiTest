@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="3.491">
+           time="3.068">
   <properties />
   
   
-            <testcase name="orderpaytype" time="3.491" classname="cloud.order.query.OrderPayType" />
+            <testcase name="orderpaytype" time="3.068" classname="cloud.order.query.OrderPayType" />
       
 </testsuite>
